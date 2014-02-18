@@ -1,0 +1,7 @@
+D:\!!!!!!\Телерик\C# - OOP\Homeworks\SazaracsMagicSword\SazaracsMagicSword\bin\Debug\SazaracsMagicSword.exe
+D:\!!!!!!\Телерик\C# - OOP\Homeworks\SazaracsMagicSword\SazaracsMagicSword\bin\Debug\SazaracsMagicSword.pdb
+D:\!!!!!!\Телерик\C# - OOP\Homeworks\SazaracsMagicSword\SazaracsMagicSword\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\!!!!!!\Телерик\C# - OOP\Homeworks\SazaracsMagicSword\SazaracsMagicSword\obj\x86\Debug\SazaracsMagicSword.exe
+D:\!!!!!!\Телерик\C# - OOP\Homeworks\SazaracsMagicSword\SazaracsMagicSword\obj\x86\Debug\SazaracsMagicSword.pdb
+C:\Users\Simoo\Documents\GitHub\TheGame\SazaracsMagicSword\obj\x86\Debug\SazaracsMagicSword.exe
+C:\Users\Simoo\Documents\GitHub\TheGame\SazaracsMagicSword\obj\x86\Debug\SazaracsMagicSword.pdb
