@@ -7,24 +7,20 @@ namespace SazaracsMagicSword.GameObjects
 {
     public class VisualElement : IMove
     {
-        public int width;
-        public int height;
-        public ConsoleColor backbroundColor;
-        public string text;
+        VisualBrick[,] ElementMatrix;
         bool isSolid; /// player can not pass through solid elements;
+        object content;
 
         public Position position;
 
-        public VisualElement(int width, int height, ConsoleColor backbroundColor, string text, bool isSolid, Position position)
+        public VisualElement(int width, int height, VisualBrick[,] ElementMatrix, object content, bool isSolid, Position position)
         {
             if (width < 1 || height < 1)
             {
                 throw new ArgumentException("Both Width and height must be positive.");
             }
-            this.width = width;
-            this.height = height;
-            this.backbroundColor = backbroundColor;
-            this.text = text;
+            this.ElementMatrix = ElementMatrix;
+            this.content = content;
             this.isSolid = isSolid;
             this.position = position;
         }

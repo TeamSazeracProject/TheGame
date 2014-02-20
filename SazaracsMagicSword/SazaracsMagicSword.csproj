@@ -47,6 +47,7 @@
     <Compile Include="Data\MagicAndWeapons.cs" />
     <Compile Include="GameObjects\Hero.cs" />
     <Compile Include="GameObjects\Magic.cs" />
+    <Compile Include="GameObjects\VisualBrick.cs" />
     <Compile Include="GameObjects\Weapon.cs" />
     <Compile Include="GameObjects\Enemy.cs" />
     <Compile Include="GameObjects\Human.cs" />

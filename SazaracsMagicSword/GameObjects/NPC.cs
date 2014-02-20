@@ -7,10 +7,9 @@ namespace SazaracsMagicSword.GameObjects
 {
     class NPC : Human
     {
-        VisualElement visualNPC;
         List<string> conversation;
 
-        public NPC(string Name, VisualElement visualNPC, List<string> conversation)
+        public NPC(string Name, List<string> conversation)
         {
             if (string.IsNullOrEmpty(Name))
             {
@@ -21,7 +20,6 @@ namespace SazaracsMagicSword.GameObjects
                 throw new ArgumentException("Conversation is empty");
             }
             this.Name = Name;
-            this.visualNPC = visualNPC;
             this.conversation = conversation;
         }
     }

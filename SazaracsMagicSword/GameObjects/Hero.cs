@@ -9,10 +9,9 @@ namespace SazaracsMagicSword.GameObjects
     {
         public Statistics statistics;
         public Weapon weapon;
-        public VisualElement visibleHero;
         public string pathToImage;
 
-        public Hero(string Name, Statistics statistics, Weapon weapon, VisualElement visibleHero, string pathToImage)
+        public Hero(string Name, Statistics statistics, Weapon weapon, string pathToImage)
         {
             if (string.IsNullOrEmpty(Name))
             {
@@ -25,7 +24,6 @@ namespace SazaracsMagicSword.GameObjects
             this.Name = Name;
             this.statistics = statistics;
             this.weapon = weapon;
-            this.visibleHero = visibleHero;
             this.pathToImage = pathToImage;
         }
     }
