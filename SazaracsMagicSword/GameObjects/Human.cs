@@ -8,5 +8,6 @@ namespace SazaracsMagicSword.GameObjects
     public class Human
     {
         public string Name { get; set; }
+        public string image { get; set; }
     }
 }

@@ -7,24 +7,23 @@ namespace SazaracsMagicSword.GameObjects
 {
     class Hero : Human
     {
+        public int level = 1;
         public Statistics statistics;
+        public Statistics levelUpStats;
         public Weapon weapon;
-        public string pathToImage;
 
-        public Hero(string Name, Statistics statistics, Weapon weapon, string pathToImage)
+
+        public Hero(string Name, Statistics statistics, Weapon weapon, string image, Statistics levelUpStats)
         {
             if (string.IsNullOrEmpty(Name))
             {
                 throw new ArgumentNullException("Name is empty.");
             }
-            if (!File.Exists(pathToImage))
-            {
-                throw new ArgumentException("Could not find the specified file.");
-            }
             this.Name = Name;
             this.statistics = statistics;
             this.weapon = weapon;
-            this.pathToImage = pathToImage;
+            this.levelUpStats = levelUpStats;
+            this.image = image;
         }
     }
 }

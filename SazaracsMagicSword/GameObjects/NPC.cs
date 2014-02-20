@@ -9,7 +9,7 @@ namespace SazaracsMagicSword.GameObjects
     {
         List<string> conversation;
 
-        public NPC(string Name, List<string> conversation)
+        public NPC(string Name, List<string> conversation, string image)
         {
             if (string.IsNullOrEmpty(Name))
             {
@@ -21,6 +21,7 @@ namespace SazaracsMagicSword.GameObjects
             }
             this.Name = Name;
             this.conversation = conversation;
+            this.image = image;
         }
     }
 }

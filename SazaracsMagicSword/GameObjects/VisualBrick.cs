@@ -7,8 +7,8 @@ namespace SazaracsMagicSword.GameObjects
 {
     public struct VisualBrick
     {
-        ConsoleColor color;
-        char ch;
+        public ConsoleColor color { get; set; }
+        public char ch { get; set; }
         
         public VisualBrick (ConsoleColor color, char ch) : this()
         {

@@ -12,9 +12,8 @@ namespace SazaracsMagicSword.GameObjects
         public Statistics statistics;
         public double chanceToEscape;
         public Weapon weapon;
-        public string PathToImage;
 
-        public Enemy(string Name, SeenAt seenAt, double chanceToAppear, Statistics statistics, double chanceToEscape, Weapon weapon, string PathToImage)
+        public Enemy(string Name, SeenAt seenAt, double chanceToAppear, Statistics statistics, double chanceToEscape, Weapon weapon, string image)
         {
             if (string.IsNullOrEmpty(Name))
             {
@@ -28,16 +27,13 @@ namespace SazaracsMagicSword.GameObjects
             {
                 throw new ArgumentException("chanceToEscape must be in the diapason of [0, 1].");
             }
-            if (!File.Exists(PathToImage))
-            {
-                throw new ArgumentException("Could not find the image file");
-            }
             this.Name = Name;
             this.seenAt = seenAt;
             this.chanceToAppear = chanceToAppear;
             this.statistics = statistics;
             this.chanceToEscape = chanceToEscape;
             this.weapon = weapon;
+            this.image = image;
         }
     }
 

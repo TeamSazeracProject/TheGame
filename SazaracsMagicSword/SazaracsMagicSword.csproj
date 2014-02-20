@@ -44,7 +44,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data\EnemyesAndBosses.cs" />
+    <Compile Include="Data\Levels.cs" />
     <Compile Include="Data\MagicAndWeapons.cs" />
+    <Compile Include="Data\VisualElements.cs" />
+    <Compile Include="RunTime\Drawer.cs" />
+    <Compile Include="RunTime\Loader.cs" />
     <Compile Include="GameObjects\Hero.cs" />
     <Compile Include="GameObjects\Magic.cs" />
     <Compile Include="GameObjects\VisualBrick.cs" />
@@ -55,12 +59,14 @@
     <Compile Include="GameObjects\Position.cs" />
     <Compile Include="GameObjects\Statistics.cs" />
     <Compile Include="GameObjects\VisualElement.cs" />
+    <Compile Include="RunTime\Menus.cs" />
     <Compile Include="Start.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="GameObjects\ObjectsDiagram.cd" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
