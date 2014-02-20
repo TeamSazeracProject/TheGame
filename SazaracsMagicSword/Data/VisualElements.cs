@@ -7,6 +7,10 @@ namespace SazaracsMagicSword.Data
     class VisualElements
     {
         Random rnd = new Random();
+        public VisualElement Empty()
+        {
+            return MakeElement(ConsoleColor.Black, 5, 5, ' ', '|', true);
+        }
         public VisualElement Hero()
         {
             VisualElement hero = MakeElement(ConsoleColor.White, 5, 5, ' ', '*', false);
