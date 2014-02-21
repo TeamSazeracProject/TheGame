@@ -76,7 +76,7 @@ namespace SazaracsMagicSword.RunTime
                     }
                     else if (level[r][c].Equals('+'))
                     {
-                        matrix[r, c] = VisualLoader.Grass(sizeOfVisualElements);
+                        matrix[r, c] = VisualLoader.Barren(sizeOfVisualElements);
                         matrix[r, c].content = dangersOnThisLevel[2]; /// will have 3-rd enemy
                     }
                     else if (level[r][c].Equals('#'))

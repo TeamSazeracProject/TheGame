@@ -17,16 +17,15 @@ namespace SazaracsMagicSword
         static Hero hero;
         static VisualElement[,] matrix = new VisualElement[levels.height, levels.width];
         static List<NPC> NPCsOfCurrentLevel = new List<NPC>();
+        static bool nearbyNPC;
 
-        static int height = 9, width = 13;
+        static int height = 50, width = 110;
         static VisualElement[,] VisibleMatrix = new VisualElement[height, width];
 
         static void Main(string[] args)
         {
-            Console.WindowHeight = 50;
-            Console.WindowWidth = 90;
-
-            // --- MyPlan
+            Console.WindowHeight = height;
+            Console.WindowWidth = width;
 
             //1) Main menu (new game / load game)
             hero = menu.ChooseHeroFromConsole();
@@ -37,11 +36,8 @@ namespace SazaracsMagicSword
             draw.DrawMatrixInConsole(matrix);
             while (true)
             {
-<<<<<<< HEAD
+                CheckHeroPosition();
 
-=======
-                
->>>>>>> 07fd6d369b660aad067c07c66f4146517ed20644
                 draw.DrawHero(hero);
                 Console.SetCursorPosition(80, 0);
                 ConsoleKeyInfo pressedKey = Console.ReadKey();
@@ -89,6 +85,54 @@ namespace SazaracsMagicSword
             //6) Levels
 
             //7) Tests
+        }
+
+        static void CheckHeroPosition()
+        {
+            DiceRoller dice = new DiceRoller();
+            int r = hero.position.row;
+            int c = hero.position.col;
+            nearbyNPC = false;
+
+            for (int row = r - 1; row <= r + 1; row++)
+            {
+                for (int col = c - 1; col <= c + 1; col++)
+                {
+                    foreach (NPC npc in NPCsOfCurrentLevel)
+                    {
+                        if (npc.position.row == row && npc.position.col == col)
+                        {
+                            nearbyNPC = true;
+                            int top = height - 7;
+                            int left = width / 2 - 20;
+                            Console.SetCursorPosition(left, top);
+                            Console.BackgroundColor = ConsoleColor.DarkGreen;
+                            Console.Write("Press [Enter] to talk to " + npc.Name);
+
+                            ////////////////
+                            Conversation test = new Conversation();
+                            test.DrawConversation(hero, npc);
+                            
+                        }
+                    }
+                }
+            }
+            if (!nearbyNPC)
+            {
+                int top = height - 7;
+                int left = width / 2 - 20;
+                Console.SetCursorPosition(left, top);
+                Console.BackgroundColor = ConsoleColor.Black;
+                Console.Write(new String(' ', 40));
+            }
+
+            if (matrix[r, c].content is DangerousTerritory)
+            {
+                if (dice.NewDice(matrix[r, c].content.Chance))
+                {
+                    // battle!
+                }
+            }
         }
     }
 }

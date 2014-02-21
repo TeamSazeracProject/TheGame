@@ -13,7 +13,11 @@ namespace SazaracsMagicSword.Data
         }
         public VisualElement Hero(int size)
         {
-            return MakeElement(ConsoleColor.White, size, size, '*', '*', false);
+            return MakeElement(ConsoleColor.White, size, size, '*', '*', true);
+        }
+        public VisualElement Barren(int size)
+        {
+            return MakeElement(ConsoleColor.DarkGray, size, size, ' ', '.', false);
         }
         public VisualElement Desert(int size)
         {

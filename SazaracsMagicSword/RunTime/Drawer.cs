@@ -8,6 +8,16 @@ namespace SazaracsMagicSword.RunTime
 {
     class Drawer
     {
+        public void DrawImage(string[] image, int row, int col)
+        {
+            Console.BackgroundColor = ConsoleColor.White;
+            for (int i = 0; i < image.Length; i++)
+            {
+                Console.SetCursorPosition(col, row + i);
+                Console.Write(image[i]);
+            }
+        }
+
         public void DrawHero(Hero hero)
         {
             Console.SetCursorPosition(hero.position.col, hero.position.row);

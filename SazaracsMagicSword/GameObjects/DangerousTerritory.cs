@@ -7,8 +7,8 @@ namespace SazaracsMagicSword.GameObjects
 {
     public class DangerousTerritory
     {
-        double Chance { get; set; }
-        Enemy enemyToAppear { get; set; }
+        public double Chance { get; set; }
+        public Enemy enemyToAppear { get; set; }
 
         public DangerousTerritory(double Chance, Enemy enemyToAppear)
         {
