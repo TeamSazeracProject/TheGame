@@ -36,7 +36,9 @@ namespace SazaracsMagicSword
             draw.DrawMatrixInConsole(matrix);
             while (true)
             {
+                
                 draw.DrawHero(hero);
+                Console.SetCursorPosition(80, 0);
                 ConsoleKeyInfo pressedKey = Console.ReadKey();
 
                 if (pressedKey.Key.Equals(ConsoleKey.UpArrow))
