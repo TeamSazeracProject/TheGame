@@ -37,7 +37,11 @@ namespace SazaracsMagicSword
             draw.DrawMatrixInConsole(matrix);
             while (true)
             {
+<<<<<<< HEAD
 
+=======
+                
+>>>>>>> 07fd6d369b660aad067c07c66f4146517ed20644
                 draw.DrawHero(hero);
                 Console.SetCursorPosition(80, 0);
                 ConsoleKeyInfo pressedKey = Console.ReadKey();
