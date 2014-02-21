@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using SazaracsMagicSword.GameObjects;
+using System.Threading;
 
 namespace SazaracsMagicSword.RunTime
 {
     class Battle
     {
-        string whiteBoxRow = new string(' ', 30);
+        string boxRow = new string(' ', 30);
+        string[] message = { "", "", "" };
         int totalHeroHP;
         int totalEnemyHP;
         int currentHeroHP;
@@ -24,10 +26,17 @@ namespace SazaracsMagicSword.RunTime
 
             while (currentHeroHP > 0 && currentEnemyHP > 0)
             {
-                break;
+                ProcessInput(Console.ReadKey());
+                DrawBattle(hero, enemy);
+                Thread.Sleep(500);
+                EnemyAttack(enemy);
+                DrawBattle(hero, enemy);
+                Thread.Sleep(500);
+
+                break; // must be removed later;
             }
 
-            Console.ReadLine();
+            Console.ReadKey();
         }
         public void DrawBattle(Hero hero, Enemy enemy)
         {
@@ -45,7 +54,13 @@ namespace SazaracsMagicSword.RunTime
             draw.DrawImage(hero.image, ConsoleColor.Black, 5, 5);
             for (int i = 0; i < 7; i++)
             {
-                draw.DrawString(whiteBoxRow, ConsoleColor.White, 40 + i, 15);
+                draw.DrawString(boxRow, ConsoleColor.DarkYellow, 40 + i, 15);
+                if (i == 1)
+                { draw.DrawString("Press [A] to Attack", ConsoleColor.DarkYellow, 40 + i, 18); }
+                else if (i == 3)
+                { draw.DrawString("Press [S] to use a Spell", ConsoleColor.DarkYellow, 40 + i, 18); }
+                else if (i == 5)
+                { draw.DrawString("Press [E] to Escape", ConsoleColor.DarkYellow, 40 + i, 18); }
             }
             
             draw.DrawString(enemy.Name, ConsoleColor.DarkGray, 2, 55);
@@ -54,10 +69,38 @@ namespace SazaracsMagicSword.RunTime
             draw.DrawImage(enemy.image, ConsoleColor.Black, 5, 55);
             for (int i = 0; i < 7; i++)
             {
-                draw.DrawString(whiteBoxRow, ConsoleColor.White, 40 + i, 65);
+                draw.DrawString(boxRow, ConsoleColor.DarkYellow, 40 + i, 65);
+
+                if (i == 1)
+                { draw.DrawString(message[0], ConsoleColor.DarkYellow, 40 + i, 68); }
+                else if (i == 3)
+                { draw.DrawString(message[1], ConsoleColor.DarkYellow, 40 + i, 68); }
+                else if (i == 5)
+                { draw.DrawString(message[2], ConsoleColor.DarkYellow, 40 + i, 68); }
             }
+            Console.BackgroundColor = ConsoleColor.Black;
+        }
+        public void ProcessInput(ConsoleKeyInfo pressedKey)
+        {
+            if (pressedKey.Key.Equals(ConsoleKey.A))
+            {
 
+            }
+            else if (pressedKey.Key.Equals(ConsoleKey.S))
+            {
 
+            }
+            else if (pressedKey.Key.Equals(ConsoleKey.E))
+            {
+
+            }
+            else ProcessInput(Console.ReadKey());
+        }
+        public void EnemyAttack(Enemy enemy)
+        {
+            message[2] = message[1];
+            message[1] = message[0];
+            message[0] = enemy.Name + " used " + enemy.weapon.name;
         }
     }
 }

@@ -133,7 +133,6 @@ namespace SazaracsMagicSword
                 {
                     Battle battle = new Battle();
                     battle.StartBattle(hero, matrix[r, c].content.enemyToAppear);
-                    Console.Clear();
                     draw.DrawMatrixInConsole(matrix);
                 }
             }

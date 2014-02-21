@@ -19,7 +19,6 @@ namespace SazaracsMagicSword.RunTime
             draw.DrawImage(npc.image, ConsoleColor.Black, 5, 55);
 
             Console.ReadLine();
-            Console.Clear();
             // the matrix must be rewriten now
         }
     }

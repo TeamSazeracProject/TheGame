@@ -7,9 +7,9 @@ namespace SazaracsMagicSword.GameObjects
 {
     public class Weapon
     {
-        string name;
-        int damage;
-        Magic magic;
+        public string name;
+        public int damage;
+        public Magic magic;
 
         public void changeMagic(Magic magic)
         {

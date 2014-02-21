@@ -32,6 +32,9 @@ namespace SazaracsMagicSword.RunTime
         }
         public void DrawMatrixInConsole(VisualElement[,] matrix)
         {
+            Console.BackgroundColor = ConsoleColor.Black;
+            Console.Clear();
+
             int currentRow = 0, currentCol = 0;
             int stepsPerRow = matrix[0, 0].ElementMatrix.GetLength(0);
             int stepsPerCol = matrix[0, 0].ElementMatrix.GetLength(1);
