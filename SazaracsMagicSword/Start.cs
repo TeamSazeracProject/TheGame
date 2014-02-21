@@ -110,12 +110,39 @@ namespace SazaracsMagicSword
                 if (Math.Abs(npc.position.row - hero.position.row) <= 1 &&
                             Math.Abs(npc.position.col - hero.position.col) <= 1)
                 {
+<<<<<<< HEAD
                     nearbyNPC = true;
                     int top = height - 7;
                     int left = width / 2 - 20;
                     Console.SetCursorPosition(left, top);
                     Console.BackgroundColor = ConsoleColor.DarkGreen;
                     Console.Write("Press [Enter] to talk to " + npc.Name);
+=======
+                    foreach (NPC npc in NPCsOfCurrentLevel)
+                    {
+                        if (npc.position.row == row && npc.position.col == col)
+                        {
+                            nearbyNPC = true;
+                            int top = height - 7;
+                            int left = width / 2 - 20;
+                            Console.SetCursorPosition(left, top);
+                            Console.BackgroundColor = ConsoleColor.DarkGreen;
+                            Console.Write("Press [Enter] to talk to " + npc.Name);
+
+                            //added player choise
+                            var enterKey = Console.ReadKey();
+                            if (enterKey.Key.Equals(ConsoleKey.Enter))
+                            {
+                                Conversation test = new Conversation();
+                                test.DrawConversation(hero, npc);
+                                draw.DrawMatrixInConsole(matrix);
+                            }
+                            ////////////////
+                            
+                            
+                        }
+                    }
+>>>>>>> added intro conversation
                 }
             }
             if (!nearbyNPC)
