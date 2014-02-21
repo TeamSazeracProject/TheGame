@@ -36,7 +36,7 @@ namespace SazaracsMagicSword
             draw.DrawMatrixInConsole(matrix);
             while (true)
             {
-                CheckHeroPosition();
+                CheckHeroPosition(); // Conversations && Battles
 
                 draw.DrawHero(hero);
                 Console.SetCursorPosition(80, 0);
@@ -44,16 +44,6 @@ namespace SazaracsMagicSword
 
                 ProcessInput(pressedKey);
             }
-
-            //3) In-game menu
-
-            //4) Conversations
-
-            //5) Battles
-
-            //6) Levels
-
-            //7) Tests
         }
         static void ProcessInput(ConsoleKeyInfo pressedKey)
         {

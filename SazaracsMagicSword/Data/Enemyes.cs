@@ -14,7 +14,7 @@ namespace SazaracsMagicSword.Data
             new Enemy(
                 "Wolf",
                 0.1,
-                new Statistics(20, 10, 0),
+                new Statistics(15, 15, 0),
                 0.9,
                 new Weapon("Claws", 5, null),
                 img.Dog

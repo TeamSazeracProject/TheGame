@@ -11,19 +11,8 @@ namespace SazaracsMagicSword.RunTime
     {
         public Hero ChooseHeroFromConsole() /// Will be a more complex menu with a few choices in it
         {
-            Weapons weaps = new Weapons();
-            Spells spls = new Spells();
-            Images img = new Images();
-
-            Weapon wpn =  weaps.WeakWeapons[0];
-            wpn.changeMagic(spls.BasicSpells[0]);
-            return new Hero(
-                "Hero",
-                new Statistics(15, 15, 15),
-                wpn,
-                img.HumanWithShieldAndBigSword,
-                new Statistics(5, 5, 5)
-                );
+            HeroTypes types = new HeroTypes();
+            return types.TestersChoice();
         }
     }
 }
