@@ -30,16 +30,16 @@ namespace SazaracsMagicSword.GameObjects
             switch (direction)
             {
                 case Direction.up:
-                        this.position.row -= 1;
+                    this.position.row += -1;
                     break;
                 case Direction.down:
-                        this.position.row += 1;
+                    this.position.row += 1;
                     break;
                 case Direction.left:
-                        this.position.col -= 1;
+                    this.position.col += -1;
                     break;
                 case Direction.right:
-                        this.position.col += 1;
+                    this.position.col += 1;
                     break;
                 default:
                     break;
