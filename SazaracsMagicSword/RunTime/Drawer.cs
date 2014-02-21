@@ -3,11 +3,33 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using SazaracsMagicSword.GameObjects;
+using System.Threading;
 
 namespace SazaracsMagicSword.RunTime
 {
     class Drawer
     {
+        public void PrintConversation(List<string> introConversation)
+        {
+            foreach (var item in introConversation)
+            {
+                Console.SetCursorPosition(15, 40);
+                int sleepTime = 30;
+                Console.ForegroundColor = ConsoleColor.Green;
+                foreach (var character in item)
+                {
+                    Thread.Sleep(sleepTime);
+                    Console.Write(character);
+                }
+
+                Console.ForegroundColor = ConsoleColor.Gray;
+                Console.Write("\n\n\n                 press any key to continue...");
+                Console.ReadKey();
+
+                Console.SetCursorPosition(15, 40);
+                Console.WriteLine(new string(' ',100));
+            }
+        }
         public void DrawString(string stringToWrite, ConsoleColor background, int row, int col)
         {
             Console.SetCursorPosition(col, row);
@@ -21,6 +43,20 @@ namespace SazaracsMagicSword.RunTime
             {
                 Console.SetCursorPosition(col, row + i);
                 Console.Write(image[i]);
+            }
+        }
+        public void DrawImageWithoutSpaces(string[] image, int row, int col)
+        {
+            for (int i = 0; i < image.Length; i++)
+            {
+                for (int y = 0; y < image[i].Length; y++)
+                {
+                    if (!image[i][y].Equals(' '))
+                    {
+                        Console.SetCursorPosition(col + y, row + i);
+                        Console.Write(image[i][y]);
+                    }
+                }
             }
         }
 

@@ -12,7 +12,7 @@ namespace SazaracsMagicSword.RunTime
         public Hero ChooseHeroFromConsole() /// Will be a more complex menu with a few choices in it
         {
             HeroTypes types = new HeroTypes();
-            return types.TestersChoice();
+            return types.Mage();
         }
     }
 }

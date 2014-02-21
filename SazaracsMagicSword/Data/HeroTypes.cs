@@ -50,7 +50,7 @@ namespace SazaracsMagicSword.Data
         }
         public Hero TestersChoice()
         {
-            Weapon weap = new Weapon("Testers Sword", 50, new Magic("Testers Spell", 50, -30));
+            Weapon weap = new Weapon("Testers Sword", 100, new Magic("Testers Spell", 50, -30));
             weap.changeMagic(spls.MasterSpells[1]); // of Fireball
 
             return new Hero("hero",
