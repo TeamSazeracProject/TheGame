@@ -8,6 +8,8 @@ namespace SazaracsMagicSword.Data
 {
     class NPCs
     {
+        static Images imgs = new Images();
+
         List<NPC> npcList = new List<NPC>{
         // 0 "Filthy Dog"
         new NPC("Filthy Dog",
@@ -20,7 +22,7 @@ namespace SazaracsMagicSword.Data
                 "'Waf, Waf, Waf!!!'",
                 "You decide to leave."
             },
-            "*"),
+            imgs.Dog),
         // 1 "Quest Giver"
         new NPC("The Quest Giver",
             new List<string>{"You see a man who looks troulbled.",
@@ -37,7 +39,7 @@ namespace SazaracsMagicSword.Data
             "Quest Giver: Yeah, right. Like I'll bite that!",
             "You decide to leave the men alone. Let him find someone else to trouble."
             },
-            "*"),
+            imgs.HumanWithSword),
         // 2 "The Witch"
         new NPC("The Witch",
             new List<string>{"You see an old woman with tight black clothes and a pointy hat.",
@@ -54,7 +56,7 @@ namespace SazaracsMagicSword.Data
             "You: I woudn't say it like that...",
             "You: I woudn't say it like that... but yes, they are."
             },
-            "*"),
+            imgs.HumanOld),
         // 3 "The Boring Guy"
         new NPC("The Boring Guy",
             new List<string>{"You see an grown man, greeting you with a smiling face",
@@ -74,7 +76,7 @@ namespace SazaracsMagicSword.Data
             "You say 'Goodbie' and start walking away, and as you turn your back on the men, you immidiatly forget everything he've told you so far.",
             "You feel stupid again..."
             },
-            "*"),
+            imgs.HumanOld),
         // 4 "The Smith"
         new NPC("The Smith",
             new List<string>{"You see a muscular smith at his workplace. He's quite busy, but he stops to greet you politly.",
@@ -91,7 +93,7 @@ namespace SazaracsMagicSword.Data
                 "You: Okey, okey! Sheesh... I don't even have an inventory, but he's yelling at me, as if I'm a theef.",
                 "You leave him alone.",
             },
-            "*"
+            imgs.HumanWithTwoSabers
             ),
         // 5 "The Assassin"
         new NPC("The Assassin",
@@ -110,7 +112,7 @@ namespace SazaracsMagicSword.Data
                 "The Assassin: You must've really pissed them off somehow.",
                 "You leave him alone and start crying like a little girl.",
             },
-            "*"
+            imgs.HumanWithSword
             ),
         // 6 "The Angry Man"
         new NPC("The Angry Man",
@@ -119,7 +121,7 @@ namespace SazaracsMagicSword.Data
             "'Leave me alone' he shouts and throws a rock at your dirrection.",
             "You decide to leave him like that."
             },
-            "*"),
+            imgs.HumanWithSword),
         // 7 "The Troll"
         new NPC("The Troll",
             new List<string>{"You see a VERY rich man. He has gold all over himself.",
@@ -136,7 +138,7 @@ namespace SazaracsMagicSword.Data
             "The Troll: Lame, lame, lame.",
             "You leave him alone and start crying like a little girl.",
             },
-            "*"),
+            imgs.HumanOld),
         // 8 "The Drunk"
         new NPC("The Drunk",
             new List<string>{"You see a drinking man at 11 a'clock. He looks very poor.",
@@ -146,7 +148,7 @@ namespace SazaracsMagicSword.Data
             "It stings like hell.",
             "At the next morning, you wake with a bad hangover and you're not really sure what your second name was."
             },
-            "*"),
+            imgs.HumanOld),
         // 9 "The Guardian"
         new NPC("The Guardian",
             new List<string>{"You see a city guard and he sees you.",
@@ -154,7 +156,7 @@ namespace SazaracsMagicSword.Data
             "'It's very dangerous' he adds.",
             "You thank him for the warning."
             },
-            "*")
+            imgs.HumanWithSword)
         
         };
     }

@@ -6,7 +6,10 @@ namespace SazaracsMagicSword.Data
 {
     class Enemyes
     {
-        List<Enemy> WeakEnemyes = new List<Enemy>()
+        static Images img = new Images();
+        static Weapons wpns = new Weapons();
+
+        public List<Enemy> WeakEnemyes = new List<Enemy>()
         {
             new Enemy(
                 "Wolf",
@@ -14,8 +17,8 @@ namespace SazaracsMagicSword.Data
                 0.1,
                 new Statistics(20, 10, 0),
                 0.9,
-                null,
-                null
+                new Weapon("Claws", 5, null),
+                img.Dog
                 ),
             new Enemy(
                 "Gnome",
@@ -23,8 +26,8 @@ namespace SazaracsMagicSword.Data
                 0.1,
                 new Statistics(15, 15, 0),
                 0.9,
-                null,
-                null
+                new Weapon("Gnome Sword", 7, null),
+                img.Gnome
                 ),
             new Enemy(
                 "Bandit",
@@ -32,12 +35,12 @@ namespace SazaracsMagicSword.Data
                 0.1,
                 new Statistics(10, 10, 10),
                 0.9,
-                null,
-                null
+                wpns.WeakWeapons[1],
+                img.HumanWithSword
                 )
         };
 
-        List<Enemy> AverageEnemyes = new List<Enemy>()
+        public List<Enemy> AverageEnemyes = new List<Enemy>()
         {
             new Enemy(
                 "Strong Bandit",
@@ -45,8 +48,8 @@ namespace SazaracsMagicSword.Data
                 0.1,
                 new Statistics(15, 15, 10),
                 0.7,
-                null,
-                null
+                wpns.AverageWeapons[1],
+                img.HumanWithTwoSabers
                 ),
             new Enemy(
                 "Bear",
@@ -54,8 +57,8 @@ namespace SazaracsMagicSword.Data
                 0.1,
                 new Statistics(20, 20, 0),
                 0.7,
-                null,
-                null
+                new Weapon("Claws", 15, null),
+                img.Bear
                 ),
             new Enemy(
                 "Huge Spider",
@@ -63,11 +66,11 @@ namespace SazaracsMagicSword.Data
                 0.1,
                 new Statistics(15, 25, 0),
                 0.7,
-                null,
-                null
+                new Weapon("Venom", 15, null),
+                img.Spider
                 )
         };
-        List<Enemy> StrongEnemyes = new List<Enemy>()
+        public List<Enemy> StrongEnemyes = new List<Enemy>()
         {
             new Enemy(
                 "Assassin",
@@ -75,8 +78,8 @@ namespace SazaracsMagicSword.Data
                 0.1,
                 new Statistics(20, 20, 20),
                 0.5,
-                null,
-                null
+                new Weapon("Hidden Dagers", 30, null),
+                img.HumanWithTwoSabers
                 ),
             new Enemy(
                 "Magician",
@@ -84,8 +87,8 @@ namespace SazaracsMagicSword.Data
                 0.1,
                 new Statistics(10, 10, 40),
                 0.5,
-                null,
-                null
+                new Weapon("Chaotic Magic", 35, null),
+                img.HumanWithStaff
                 ),
             new Enemy(
                 "Demon",
@@ -93,12 +96,12 @@ namespace SazaracsMagicSword.Data
                 0.1,
                 new Statistics(25, 10, 25),
                 0.5,
-                null,
-                null
+                new Weapon("Demonic Magic", 40, null),
+                img.Demon
                 )
         };
 
-        List<Enemy> Bosses = new List<Enemy>()
+        public List<Enemy> Bosses = new List<Enemy>()
         {
             new Enemy(
                 "The Lord Of Fire",
@@ -106,8 +109,8 @@ namespace SazaracsMagicSword.Data
                 0.1,
                 new Statistics(10, 15, 20),
                 0.5,
-                null,
-                null
+                new Weapon("Fire Magic", 15, null),
+                img.HumanInFlame
                 ),
             new Enemy(
                 "The WareWolf",
@@ -115,8 +118,8 @@ namespace SazaracsMagicSword.Data
                 0.1,
                 new Statistics(40, 15, 10),
                 0.5,
-                null,
-                null
+                new Weapon("Claws", 30, null),
+                img.WareWolf
                 ),
             new Enemy(
                 "Sazarac",
@@ -124,8 +127,8 @@ namespace SazaracsMagicSword.Data
                 0.1,
                 new Statistics(30, 30, 30),
                 0.5,
-                null,
-                null
+                new Weapon("Sazarak's Sword", 70, null),
+                img.HumanWithShieldAndBigSword
                 )
         };
     }

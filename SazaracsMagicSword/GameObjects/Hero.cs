@@ -12,7 +12,7 @@ namespace SazaracsMagicSword.GameObjects
         public Statistics levelUpStats;
         public Weapon weapon;
 
-        public Hero(string Name, Statistics statistics, Weapon weapon, string image, Statistics levelUpStats)
+        public Hero(string Name, Statistics statistics, Weapon weapon, string[] image, Statistics levelUpStats)
         {
             if (string.IsNullOrEmpty(Name))
             {

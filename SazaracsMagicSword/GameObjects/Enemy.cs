@@ -13,7 +13,7 @@ namespace SazaracsMagicSword.GameObjects
         public double chanceToEscape;
         public Weapon weapon;
 
-        public Enemy(string Name, SeenAt seenAt, double chanceToAppear, Statistics statistics, double chanceToEscape, Weapon weapon, string image)
+        public Enemy(string Name, SeenAt seenAt, double chanceToAppear, Statistics statistics, double chanceToEscape, Weapon weapon, string[] image)
         {
             if (string.IsNullOrEmpty(Name))
             {

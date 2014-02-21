@@ -9,7 +9,7 @@ namespace SazaracsMagicSword.GameObjects
     {
         List<string> conversation;
 
-        public NPC(string Name, List<string> conversation, string image)
+        public NPC(string Name, List<string> conversation, string[] image)
         {
             if (string.IsNullOrEmpty(Name))
             {

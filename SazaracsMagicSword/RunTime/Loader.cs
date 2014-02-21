@@ -60,7 +60,8 @@ namespace SazaracsMagicSword.RunTime
                     }
                     else if (level[r][c].Equals('/'))
                     {
-                        matrix[r, c] = VisualLoader.Grass(); /// will have 1-st enemy
+                        matrix[r, c] = VisualLoader.Grass();
+                        //matrix[r, c].content  = /// will have 1-st enemy
                     }
                     else if (level[r][c].Equals('.'))
                     {
