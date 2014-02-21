@@ -7,61 +7,40 @@ namespace SazaracsMagicSword.Data
     class VisualElements
     {
         Random rnd = new Random();
-        public VisualElement Empty()
+        public VisualElement Empty(int size)
         {
-            return MakeElement(ConsoleColor.Black, 5, 5, ' ', '|', true);
+            return MakeElement(ConsoleColor.Black, size, size, ' ', ' ', true);
         }
-        public VisualElement Hero()
+        public VisualElement Hero(int size)
         {
-            VisualElement hero = MakeElement(ConsoleColor.White, 5, 5, ' ', '*', false);
-            string[] str = {"  *  ",
-                            " *** ",
-                            "* * *",
-                            "  *  ",
-                            " * * "};
-            for (int r = 0; r < 5; r++)
-            {
-                for (int c = 0; c < 5; c++)
-                {
-                    if (str[r][c].Equals('*'))
-                    {
-                        hero.ElementMatrix[r, c].ch = 'M';
-                        hero.ElementMatrix[r, c].color = ConsoleColor.Black;
-                    }
-                }
-            }
-            return hero;
+            return MakeElement(ConsoleColor.White, size, size, '*', '*', false);
         }
-        public VisualElement Desert()
+        public VisualElement Desert(int size)
         {
-            return MakeElement(ConsoleColor.Yellow, 5, 5, ' ', '*', false);
+            return MakeElement(ConsoleColor.Yellow, size, size, ' ', '.', false);
         }
-        public VisualElement Grass()
+        public VisualElement Grass(int size)
         {
-            return MakeElement(ConsoleColor.Green, 5, 5, '\\', '*', false);
+            return MakeElement(ConsoleColor.Green, size, size, ' ', '.', false);
         }
-        public VisualElement Rock()
+        public VisualElement Rock(int size)
         {
-            return MakeElement(ConsoleColor.DarkGray, 5, 5, '/', '/', true);
+            return MakeElement(ConsoleColor.DarkGray, size, size, '#', '#', true);
         }
-        public VisualElement NPC()
+        public VisualElement NPC(int size)
         {
-            VisualElement npc = MakeElement(ConsoleColor.Magenta, 5, 5, ' ', ' ', true);
-            npc.ElementMatrix[2, 1].ch = 'N';
-            npc.ElementMatrix[2, 2].ch = 'P';
-            npc.ElementMatrix[2, 3].ch = 'C';
-            return npc;
+            return MakeElement(ConsoleColor.Magenta, size, size, '!', '!', true);
         }
 
         public VisualElement MakeElement(ConsoleColor color, int width, int height, char baseTexture, char randomTexture, bool isSolid)
         {
             VisualBrick[,] visuals = GetVisualsFilledWithColor(color, width, height, baseTexture);
-            visuals = GenerateRandomTexture(visuals, '*');
+
+            visuals = GenerateRandomTexture(visuals, randomTexture);
         return new VisualElement(
             visuals,
             null,
-            isSolid,
-            new Position(0,0)
+            isSolid
             );
         }
 
@@ -79,10 +58,16 @@ namespace SazaracsMagicSword.Data
             }
             return bricks;
         }
+
         public VisualBrick[,] GenerateRandomTexture(VisualBrick[,] bricks, char ch)
         {
             int row = rnd.Next(0, bricks.GetLength(0));
             int col = rnd.Next(0, bricks.GetLength(1));
+
+            if (rnd.Next(0,4)!=0) // 20% chance for not generating random texture
+            {
+                return bricks;
+            }
 
             bricks[row, col].ch = ch;
 

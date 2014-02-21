@@ -10,16 +10,12 @@ namespace SazaracsMagicSword.GameObjects
         public VisualBrick[,] ElementMatrix;
         bool isSolid; /// player can not pass through solid elements;
         public DangerousTerritory content;
-        public bool heroIsThere;
 
-        public Position position;
-
-        public VisualElement(VisualBrick[,] ElementMatrix, DangerousTerritory content, bool isSolid, Position position)
+        public VisualElement(VisualBrick[,] ElementMatrix, DangerousTerritory content, bool isSolid)
         {
             this.ElementMatrix = ElementMatrix;
             this.content = content;
             this.isSolid = isSolid;
-            this.position = position;
         }
     }
 }

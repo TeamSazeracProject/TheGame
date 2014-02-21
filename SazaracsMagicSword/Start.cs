@@ -22,8 +22,8 @@ namespace SazaracsMagicSword
 
         static void Main(string[] args)
         {
-            Console.WindowHeight = height * 5;
-            Console.WindowWidth = width * 5;
+            Console.WindowHeight = 55;
+            Console.WindowWidth = 90;
 
             // --- MyPlan
 
@@ -31,9 +31,9 @@ namespace SazaracsMagicSword
             hero = menu.ChooseHeroFromConsole();
 
             //2) Dynamic game
-            matrix = load.LoadLevel(matrix, levels.Level1);
-            VisibleMatrix = load.LoadVisibleLevel(VisibleMatrix, matrix);
-            draw.DrawMatrixInConsole(VisibleMatrix); // throws an exception...
+            matrix = load.LoadLevel(matrix, levels.Level1, hero);
+            VisibleMatrix = load.LoadVisibleLevel(VisibleMatrix, matrix, hero); // throws an exception...
+            draw.DrawMatrixInConsole(matrix);
 
             //3) In-game menu
 

@@ -11,6 +11,7 @@ namespace SazaracsMagicSword.GameObjects
         public Statistics statistics;
         public Statistics levelUpStats;
         public Weapon weapon;
+        public Position position;
 
         public Hero(string Name, Statistics statistics, Weapon weapon, string[] image, Statistics levelUpStats)
         {
