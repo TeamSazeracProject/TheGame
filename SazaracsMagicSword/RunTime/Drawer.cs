@@ -10,7 +10,6 @@ namespace SazaracsMagicSword.RunTime
     {
         public void DrawImage(string[] image, int row, int col)
         {
-            Console.BackgroundColor = ConsoleColor.White;
             for (int i = 0; i < image.Length; i++)
             {
                 Console.SetCursorPosition(col, row + i);
