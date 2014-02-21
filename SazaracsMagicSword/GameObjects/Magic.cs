@@ -7,11 +7,11 @@ namespace SazaracsMagicSword.GameObjects
 {
     public class Magic
     {
-        string Name;
-        int damage;
-        int damageOnSelf;
-        bool crippleFoe;
-        double chanceToCrippleFoe;
+        public string Name;
+        public int damage;
+        public int damageOnSelf;
+        public bool crippleFoe;
+        public double chanceToCrippleFoe;
 
         public Magic(string Name, int damage, int damageOnSelf)
         {

@@ -15,9 +15,16 @@ namespace SazaracsMagicSword.RunTime
         int totalEnemyHP;
         int currentHeroHP;
         int currentEnemyHP;
+        bool enemyIsCrippled;
+        bool escapeSuccessful;
+        Hero hero;
+        Enemy enemy;
 
-        public void StartBattle(Hero hero, Enemy enemy)
+        public void StartBattle(Hero TheHero, Enemy TheEnemy)
         {
+            hero = TheHero;
+            enemy = TheEnemy;
+
             totalHeroHP = hero.statistics.hitPoints;
             currentHeroHP = totalHeroHP;
             totalEnemyHP = enemy.statistics.hitPoints;
@@ -29,11 +36,15 @@ namespace SazaracsMagicSword.RunTime
                 ProcessInput(Console.ReadKey());
                 DrawBattle(hero, enemy);
                 Thread.Sleep(500);
-                EnemyAttack(enemy);
+                if (escapeSuccessful)
+                {
+                    break;
+                }
+                EnemyAttack();
                 DrawBattle(hero, enemy);
                 Thread.Sleep(500);
 
-                break; // must be removed later;
+                enemyIsCrippled = false;
             }
 
             Console.ReadKey();
@@ -84,23 +95,60 @@ namespace SazaracsMagicSword.RunTime
         {
             if (pressedKey.Key.Equals(ConsoleKey.A))
             {
-
+                AddMessage(hero.Name + " used " + hero.weapon.name); 
+                int damage = hero.weapon.damage;
+                damage *= hero.statistics.strength / 15;
             }
             else if (pressedKey.Key.Equals(ConsoleKey.S))
             {
+                DiceRoller dice = new DiceRoller();
 
+                AddMessage(hero.Name + " used " + hero.weapon.magic.Name); 
+                
+                int damage = hero.weapon.magic.damage;
+                damage *= hero.statistics.willpower / 15;
+                int damageOnSelf = hero.weapon.magic.damageOnSelf;
+                damageOnSelf *= hero.statistics.willpower / 15;
+
+                currentEnemyHP -= damage;
+                currentHeroHP -= damageOnSelf;
+                if (currentHeroHP > totalHeroHP)
+                { currentHeroHP = totalHeroHP; }
+                if (hero.weapon.magic.crippleFoe)
+                {
+                    enemyIsCrippled = dice.NewDice(hero.weapon.magic.chanceToCrippleFoe);
+                }
             }
             else if (pressedKey.Key.Equals(ConsoleKey.E))
             {
-
+                DiceRoller dice = new DiceRoller();
+                if (dice.NewDice(enemy.chanceToEscape))
+                {
+                    escapeSuccessful = true;
+                }
             }
             else ProcessInput(Console.ReadKey());
         }
-        public void EnemyAttack(Enemy enemy)
+        public void EnemyAttack()
+        {
+
+            if (!enemyIsCrippled)
+            {
+                AddMessage(enemy.Name + " used " + enemy.weapon.name);
+                currentHeroHP -= enemy.weapon.damage;
+            }
+            else
+            {
+                AddMessage(enemy.Name + " can not move");
+            }
+            
+        }
+
+        public void AddMessage(string str)
         {
             message[2] = message[1];
             message[1] = message[0];
-            message[0] = enemy.Name + " used " + enemy.weapon.name;
+            message[0] = str;
         }
     }
 }
