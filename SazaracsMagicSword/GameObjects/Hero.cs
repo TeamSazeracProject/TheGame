@@ -5,7 +5,7 @@ using System.IO;
 
 namespace SazaracsMagicSword.GameObjects
 {
-    class Hero : Human
+    class Hero : Human, IMove
     {
         public int level = 1;
         public Statistics statistics;
@@ -24,6 +24,26 @@ namespace SazaracsMagicSword.GameObjects
             this.weapon = weapon;
             this.levelUpStats = levelUpStats;
             this.image = image;
+        }
+        public void Move(Direction direction)
+        {
+            switch (direction)
+            {
+                case Direction.up:
+                        this.position.row -= 1;
+                    break;
+                case Direction.down:
+                        this.position.row += 1;
+                    break;
+                case Direction.left:
+                        this.position.col -= 1;
+                    break;
+                case Direction.right:
+                        this.position.col += 1;
+                    break;
+                default:
+                    break;
+            }
         }
     }
 }

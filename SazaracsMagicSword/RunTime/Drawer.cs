@@ -8,6 +8,12 @@ namespace SazaracsMagicSword.RunTime
 {
     class Drawer
     {
+        public void DrawHero(Hero hero)
+        {
+            Console.SetCursorPosition(hero.position.col, hero.position.row);
+            Console.BackgroundColor = ConsoleColor.DarkRed;
+            Console.Write('H');
+        }
         public void DrawMatrixInConsole(VisualElement[,] matrix)
         {
             int currentRow = 0, currentCol = 0;

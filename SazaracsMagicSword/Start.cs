@@ -22,7 +22,7 @@ namespace SazaracsMagicSword
 
         static void Main(string[] args)
         {
-            Console.WindowHeight = 55;
+            Console.WindowHeight = 50;
             Console.WindowWidth = 90;
 
             // --- MyPlan
@@ -32,8 +32,46 @@ namespace SazaracsMagicSword
 
             //2) Dynamic game
             matrix = load.LoadLevel(matrix, levels.Level1, hero);
-            VisibleMatrix = load.LoadVisibleLevel(VisibleMatrix, matrix, hero); // throws an exception...
+            //VisibleMatrix = load.LoadVisibleLevel(VisibleMatrix, matrix, hero); // throws an exception...
             draw.DrawMatrixInConsole(matrix);
+            while (true)
+            {
+                draw.DrawHero(hero);
+                ConsoleKeyInfo pressedKey = Console.ReadKey();
+
+                if (pressedKey.Key.Equals(ConsoleKey.UpArrow))
+                {
+                    if (!matrix[hero.position.row - 1, hero.position.col].isSolid)
+                    {
+                        draw.DrawInConsole(matrix[hero.position.row, hero.position.col], hero.position.row, hero.position.col);
+                        hero.Move(Direction.up);
+                    }
+                }
+                else if (pressedKey.Key.Equals(ConsoleKey.DownArrow))
+                {
+                    if (!matrix[hero.position.row + 1, hero.position.col].isSolid)
+                    {
+                        draw.DrawInConsole(matrix[hero.position.row, hero.position.col], hero.position.row, hero.position.col);
+                        hero.Move(Direction.down);
+                    }
+                }
+                else if (pressedKey.Key.Equals(ConsoleKey.LeftArrow))
+                {
+                    if (!matrix[hero.position.row, hero.position.col - 1].isSolid)
+                    {
+                        draw.DrawInConsole(matrix[hero.position.row, hero.position.col], hero.position.row, hero.position.col);
+                        hero.Move(Direction.left);
+                    }
+                }
+                else if (pressedKey.Key.Equals(ConsoleKey.RightArrow))
+                {
+                    if (!matrix[hero.position.row, hero.position.col + 1].isSolid)
+                    {
+                        draw.DrawInConsole(matrix[hero.position.row, hero.position.col], hero.position.row, hero.position.col);
+                        hero.Move(Direction.right);
+                    }
+                }
+            }
 
             //3) In-game menu
 
