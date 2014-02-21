@@ -15,8 +15,8 @@ namespace SazaracsMagicSword.RunTime
             Console.BackgroundColor = ConsoleColor.Black;
             Console.Clear();
 
-            draw.DrawImage(hero.image, 5, 5);
-            draw.DrawImage(npc.image, 5, 55);
+            draw.DrawImage(hero.image, ConsoleColor.Black, 5, 5);
+            draw.DrawImage(npc.image, ConsoleColor.Black, 5, 55);
 
             Console.ReadLine();
             Console.Clear();
