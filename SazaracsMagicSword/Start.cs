@@ -42,38 +42,7 @@ namespace SazaracsMagicSword
                 Console.SetCursorPosition(80, 0);
                 ConsoleKeyInfo pressedKey = Console.ReadKey();
 
-                if (pressedKey.Key.Equals(ConsoleKey.UpArrow))
-                {
-                    if (!matrix[hero.position.row - 1, hero.position.col].isSolid)
-                    {
-                        draw.DrawInConsole(matrix[hero.position.row, hero.position.col], hero.position.row, hero.position.col);
-                        hero.Move(Direction.up);
-                    }
-                }
-                else if (pressedKey.Key.Equals(ConsoleKey.DownArrow))
-                {
-                    if (!matrix[hero.position.row + 1, hero.position.col].isSolid)
-                    {
-                        draw.DrawInConsole(matrix[hero.position.row, hero.position.col], hero.position.row, hero.position.col);
-                        hero.Move(Direction.down);
-                    }
-                }
-                else if (pressedKey.Key.Equals(ConsoleKey.LeftArrow))
-                {
-                    if (!matrix[hero.position.row, hero.position.col - 1].isSolid)
-                    {
-                        draw.DrawInConsole(matrix[hero.position.row, hero.position.col], hero.position.row, hero.position.col);
-                        hero.Move(Direction.left);
-                    }
-                }
-                else if (pressedKey.Key.Equals(ConsoleKey.RightArrow))
-                {
-                    if (!matrix[hero.position.row, hero.position.col + 1].isSolid)
-                    {
-                        draw.DrawInConsole(matrix[hero.position.row, hero.position.col], hero.position.row, hero.position.col);
-                        hero.Move(Direction.right);
-                    }
-                }
+                ProcessInput(pressedKey);
             }
 
             //3) In-game menu
@@ -86,6 +55,58 @@ namespace SazaracsMagicSword
 
             //7) Tests
         }
+        static void ProcessInput(ConsoleKeyInfo pressedKey)
+        {
+
+            if (pressedKey.Key.Equals(ConsoleKey.UpArrow))
+            {
+                if (!matrix[hero.position.row - 1, hero.position.col].isSolid)
+                {
+                    draw.DrawInConsole(matrix[hero.position.row, hero.position.col], hero.position.row, hero.position.col);
+                    hero.Move(Direction.up);
+                }
+            }
+            else if (pressedKey.Key.Equals(ConsoleKey.DownArrow))
+            {
+                if (!matrix[hero.position.row + 1, hero.position.col].isSolid)
+                {
+                    draw.DrawInConsole(matrix[hero.position.row, hero.position.col], hero.position.row, hero.position.col);
+                    hero.Move(Direction.down);
+                }
+            }
+            else if (pressedKey.Key.Equals(ConsoleKey.LeftArrow))
+            {
+                if (!matrix[hero.position.row, hero.position.col - 1].isSolid)
+                {
+                    draw.DrawInConsole(matrix[hero.position.row, hero.position.col], hero.position.row, hero.position.col);
+                    hero.Move(Direction.left);
+                }
+            }
+            else if (pressedKey.Key.Equals(ConsoleKey.RightArrow))
+            {
+                if (!matrix[hero.position.row, hero.position.col + 1].isSolid)
+                {
+                    draw.DrawInConsole(matrix[hero.position.row, hero.position.col], hero.position.row, hero.position.col);
+                    hero.Move(Direction.right);
+                }
+            }
+            else if (pressedKey.Key.Equals(ConsoleKey.Enter))
+            {
+                if (nearbyNPC)
+                {
+                    foreach (NPC npc in NPCsOfCurrentLevel)
+                    {
+                        if (Math.Abs(npc.position.row - hero.position.row) <= 1 &&
+                            Math.Abs(npc.position.col - hero.position.col) <= 1)
+                        {
+                            Conversation conversation = new Conversation();
+                            conversation.DrawConversation(hero, npc);
+                            draw.DrawMatrixInConsole(matrix);
+                        }
+                    }
+                }
+            }
+        }
 
         static void CheckHeroPosition()
         {
@@ -94,27 +115,17 @@ namespace SazaracsMagicSword
             int c = hero.position.col;
             nearbyNPC = false;
 
-            for (int row = r - 1; row <= r + 1; row++)
+            foreach (NPC npc in NPCsOfCurrentLevel)
             {
-                for (int col = c - 1; col <= c + 1; col++)
+                if (Math.Abs(npc.position.row - hero.position.row) <= 1 &&
+                            Math.Abs(npc.position.col - hero.position.col) <= 1)
                 {
-                    foreach (NPC npc in NPCsOfCurrentLevel)
-                    {
-                        if (npc.position.row == row && npc.position.col == col)
-                        {
-                            nearbyNPC = true;
-                            int top = height - 7;
-                            int left = width / 2 - 20;
-                            Console.SetCursorPosition(left, top);
-                            Console.BackgroundColor = ConsoleColor.DarkGreen;
-                            Console.Write("Press [Enter] to talk to " + npc.Name);
-
-                            ////////////////
-                            Conversation test = new Conversation();
-                            test.DrawConversation(hero, npc);
-                            
-                        }
-                    }
+                    nearbyNPC = true;
+                    int top = height - 7;
+                    int left = width / 2 - 20;
+                    Console.SetCursorPosition(left, top);
+                    Console.BackgroundColor = ConsoleColor.DarkGreen;
+                    Console.Write("Press [Enter] to talk to " + npc.Name);
                 }
             }
             if (!nearbyNPC)
