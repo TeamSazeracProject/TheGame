@@ -3,21 +3,22 @@
   <Class Name="SazaracsMagicSword.GameObjects.Enemy">
     <Position X="0.5" Y="1.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAABAAACAAEAAAAAAAAIAAAABA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAABAAACAAEAAAAAAAAAAAAABA=</HashCode>
       <FileName>GameObjects\Enemy.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="SazaracsMagicSword.GameObjects.Hero">
     <Position X="5" Y="1.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAABAAAKAAAAAAAQAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAIAAAAAAAAAAJAAAGAEAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>GameObjects\Hero.cs</FileName>
     </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
   <Class Name="SazaracsMagicSword.GameObjects.Human" Collapsed="true">
     <Position X="2.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAEAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>GameObjects\Human.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -31,32 +32,31 @@
   <Class Name="SazaracsMagicSword.GameObjects.NPC">
     <Position X="2.75" Y="1.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAIAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>GameObjects\NPC.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="SazaracsMagicSword.GameObjects.VisualElement" Collapsed="true" BaseTypeListCollapsed="true">
     <Position X="9.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAIAAAAQEQAAAIAACAAAAAAAIAAAAAAAAAAA=</HashCode>
+      <HashCode>AAACAAAAAAAAABAAAAAAAAACAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>GameObjects\VisualElement.cs</FileName>
     </TypeIdentifier>
-    <Lollipop Position="0.2" Collapsed="true" />
   </Class>
   <Class Name="SazaracsMagicSword.GameObjects.Weapon" Collapsed="true">
     <Position X="7.5" Y="1.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAgAAAAAAAAAAAAAAEAAAAAAAAAAAAABA=</HashCode>
+      <HashCode>AAAAAAAAAAAAkAAAAAAAAAAAAAAEAAAAAAAAAAAAABA=</HashCode>
       <FileName>GameObjects\Weapon.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Struct Name="SazaracsMagicSword.GameObjects.SeenAt" Collapsed="true">
-    <Position X="9.25" Y="2" Width="1.5" />
+  <Class Name="SazaracsMagicSword.GameObjects.DangerousTerritory" Collapsed="true">
+    <Position X="11" Y="2.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAQAAAAQACAAAAAAAAAAAAAAAAgAA=</HashCode>
-      <FileName>GameObjects\Enemy.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAABAA=</HashCode>
+      <FileName>GameObjects\DangerousTerritory.cs</FileName>
     </TypeIdentifier>
-  </Struct>
+  </Class>
   <Struct Name="SazaracsMagicSword.GameObjects.Statistics" Collapsed="true">
     <Position X="7.5" Y="2" Width="1.5" />
     <TypeIdentifier>
@@ -65,10 +65,17 @@
     </TypeIdentifier>
   </Struct>
   <Struct Name="SazaracsMagicSword.GameObjects.Position" Collapsed="true">
-    <Position X="9.25" Y="1.25" Width="1.5" />
+    <Position X="9.25" Y="2.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAQACAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>GameObjects\Position.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="SazaracsMagicSword.GameObjects.VisualBrick" Collapsed="true">
+    <Position X="9.25" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAACAAACAAAAAAAAAAAA=</HashCode>
+      <FileName>GameObjects\VisualBrick.cs</FileName>
     </TypeIdentifier>
   </Struct>
   <Interface Name="SazaracsMagicSword.GameObjects.IMove" Collapsed="true">

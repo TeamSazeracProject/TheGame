@@ -16,9 +16,10 @@ namespace SazaracsMagicSword
         static Menus menu = new Menus();
         static Hero hero;
         static VisualElement[,] matrix = new VisualElement[levels.height, levels.width];
+        static List<NPC> NPCsInCurrentLevel = new List<NPC>();
 
-        static int height = 9, width = 13;
-        static VisualElement[,] VisibleMatrix = new VisualElement[height, width];
+        // static int height = 9, width = 13;
+        // static VisualElement[,] VisibleMatrix = new VisualElement[height, width];
 
         static void Main(string[] args)
         {
@@ -31,7 +32,7 @@ namespace SazaracsMagicSword
             hero = menu.ChooseHeroFromConsole();
 
             //2) Dynamic game
-            matrix = load.LoadLevel(matrix, levels.Level1, hero);
+            matrix = load.LoadLevel(matrix, levels.Level1, hero, NPCsInCurrentLevel);
             //VisibleMatrix = load.LoadVisibleLevel(VisibleMatrix, matrix, hero); // throws an exception...
             draw.DrawMatrixInConsole(matrix);
             while (true)

@@ -7,7 +7,8 @@ namespace SazaracsMagicSword.GameObjects
 {
     class NPC : Human
     {
-        List<string> conversation;
+        public List<string> conversation;
+        public Position position;
 
         public NPC(string Name, List<string> conversation, string[] image)
         {

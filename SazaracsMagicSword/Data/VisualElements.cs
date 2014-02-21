@@ -29,7 +29,7 @@ namespace SazaracsMagicSword.Data
         }
         public VisualElement NPC(int size)
         {
-            return MakeElement(ConsoleColor.Magenta, size, size, '!', '!', true);
+            return MakeElement(ConsoleColor.DarkRed, size, size, '?', '!', true);
         }
 
         public VisualElement MakeElement(ConsoleColor color, int width, int height, char baseTexture, char randomTexture, bool isSolid)

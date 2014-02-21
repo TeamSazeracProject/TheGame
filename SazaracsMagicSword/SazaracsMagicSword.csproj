@@ -52,6 +52,7 @@
     <Compile Include="Data\NPCs.cs" />
     <Compile Include="Data\VisualElements.cs" />
     <Compile Include="GameObjects\DangerousTerritory.cs" />
+    <Compile Include="RunTime\DiceRoller.cs" />
     <Compile Include="RunTime\Drawer.cs" />
     <Compile Include="RunTime\Loader.cs" />
     <Compile Include="GameObjects\Hero.cs" />

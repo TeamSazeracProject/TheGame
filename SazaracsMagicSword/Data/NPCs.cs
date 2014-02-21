@@ -10,7 +10,7 @@ namespace SazaracsMagicSword.Data
     {
         static Images imgs = new Images();
 
-        List<NPC> npcList = new List<NPC>{
+        public List<NPC> npcList = new List<NPC>{
         // 0 "Filthy Dog"
         new NPC("Filthy Dog",
             new List<string>{"You see a filthy dog lying on the ground and eating some sort of a banana bread.",
