@@ -56,6 +56,7 @@
     <Compile Include="MainMenu.cs" />
     <Compile Include="RunTime\Battle.cs" />
     <Compile Include="RunTime\Conversation.cs" />
+    <Compile Include="RunTime\MenuChooseHero.cs" />
     <Compile Include="RunTime\DiceRoller.cs" />
     <Compile Include="RunTime\Drawer.cs" />
     <Compile Include="RunTime\Loader.cs" />
@@ -69,7 +70,6 @@
     <Compile Include="GameObjects\Position.cs" />
     <Compile Include="GameObjects\Statistics.cs" />
     <Compile Include="GameObjects\VisualElement.cs" />
-    <Compile Include="RunTime\Menus.cs" />
     <Compile Include="Start.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

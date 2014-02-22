@@ -129,10 +129,7 @@ namespace SazaracsMagicSword.RunTime
                 {
                     currentHeroHP = totalHeroHP;
                 }
-                if (hero.weapon.magic.crippleFoe)
-                {
-                    enemyIsCrippled = dice.NewDice(hero.weapon.magic.chanceToCrippleFoe);
-                }
+                enemyIsCrippled = dice.NewDice(hero.weapon.magic.chanceToStun);
 
                 AddMessage(hero.Name + " used " + hero.weapon.magic.Name + " (" + damage + " / " + damageOnSelf + ")");
                 DrawBattle(hero, enemy);

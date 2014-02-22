@@ -41,7 +41,7 @@ namespace SazaracsMagicSword
                 }
 
             }
-                      
+
         }
 
         private static void SetArrowPosition(int choose)

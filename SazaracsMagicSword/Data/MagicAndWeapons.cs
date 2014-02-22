@@ -8,23 +8,23 @@ namespace SazaracsMagicSword.Data
     {
         public List<Magic> BasicSpells = new List<Magic>()
         {
-            new Magic("Flash", 1, 0, true, 0.9),
-            new Magic("FireBall", 10, 0, true, 0.1),
-            new Magic("Freaze", 5, 0, true, 0.5)
+            new Magic("Flash", 1, 0, 0.9),
+            new Magic("FireBall", 10, 0,  0.1),
+            new Magic("Freaze", 5, 0, 0.5)
         };
 
         public List<Magic> AdvancedSpells = new List<Magic>()
         {
-            new Magic("Heal", 0, -20, false, 0),
-            new Magic("Slow Time", 0, 0, true, 1),
-            new Magic("Rock Slide", 15, 0, true, 0.4)
+            new Magic("Heal", 0, -20, 0),
+            new Magic("Slow Time", 5, 0, 0.9),
+            new Magic("Rock Slide", 15, 0, 0.4)
         };
 
         public List<Magic> MasterSpells = new List<Magic>()
         {
-            new Magic("Tornado", 35, 0, true, 0.2),
-            new Magic("Bless", 0, -50, true, 0.5),
-            new Magic("Curse", 50, 10, true, 0.2)
+            new Magic("Tornado", 35, 0, 0.2),
+            new Magic("Bless", 0, -50, 0.5),
+            new Magic("Curse", 50, 10, 0.2)
         };
     }
     public class Weapons
@@ -51,7 +51,7 @@ namespace SazaracsMagicSword.Data
         {
             new Weapon("Fork of DOOM", 1, new Magic("DOOM", 70, 20)), // a joke
 
-            new Weapon("Sazarac's Magic Sword", 45, new Magic("Steal Life", 30, -30, true, 0.3)) // the weapon of the final boss - Sazarac
+            new Weapon("Sazarac's Magic Sword", 55, new Magic("Steal Life", 30, -30, 0.3)) // the weapon of the final boss - Sazarac
         };
     }
 }

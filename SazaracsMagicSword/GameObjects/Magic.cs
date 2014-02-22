@@ -10,8 +10,7 @@ namespace SazaracsMagicSword.GameObjects
         public string Name;
         public int damage;
         public int damageOnSelf;
-        public bool crippleFoe;
-        public double chanceToCrippleFoe;
+        public double chanceToStun;
 
         public Magic(string Name, int damage, int damageOnSelf)
         {
@@ -22,10 +21,9 @@ namespace SazaracsMagicSword.GameObjects
             this.Name = Name;
             this.damage = damage;
             this.damageOnSelf = damageOnSelf;
-            this.crippleFoe = false;
-            this.chanceToCrippleFoe = 0;
+            this.chanceToStun = 0;
         }
-        public Magic(string Name, int damage, int damageOnSelf, bool crippleFoe, double chanceToCrippleFoe)
+        public Magic(string Name, int damage, int damageOnSelf, double chanceToCrippleFoe)
         {
             if (string.IsNullOrEmpty(Name))
             {
@@ -38,8 +36,7 @@ namespace SazaracsMagicSword.GameObjects
             this.Name = Name;
             this.damage = damage;
             this.damageOnSelf = damageOnSelf;
-            this.crippleFoe = crippleFoe;
-            this.chanceToCrippleFoe = chanceToCrippleFoe;
+            this.chanceToStun = chanceToCrippleFoe;
         }
     }
 }

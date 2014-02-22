@@ -9,6 +9,9 @@ namespace SazaracsMagicSword.RunTime
 {
     class Drawer
     {
+        void DrawPointers(int choice)
+        {
+        }
         public void PrintConversation(List<string> introConversation)
         {
             foreach (var item in introConversation)
