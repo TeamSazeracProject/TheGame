@@ -19,7 +19,7 @@ namespace SazaracsMagicSword
         static bool nearbyNPC;
 
         static int height = 50, width = 110;
-        static VisualElement[,] VisibleMatrix = new VisualElement[height, width];
+        //static VisualElement[,] VisibleMatrix = new VisualElement[height, width];
 
         static void Main(string[] args)
         {

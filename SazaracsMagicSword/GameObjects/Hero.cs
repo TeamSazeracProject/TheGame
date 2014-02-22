@@ -25,6 +25,14 @@ namespace SazaracsMagicSword.GameObjects
             this.levelUpStats = levelUpStats;
             this.image = image;
         }
+        public void LevelUp()
+        {
+            this.level++;
+            this.statistics.strength += this.levelUpStats.strength;
+            this.statistics.dexterity += this.levelUpStats.dexterity;
+            this.statistics.willpower += this.levelUpStats.willpower;
+            this.statistics.RefreshHP();
+        }
         public void Move(Direction direction)
         {
             switch (direction)

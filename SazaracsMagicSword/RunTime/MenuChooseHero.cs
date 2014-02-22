@@ -72,7 +72,13 @@ namespace SazaracsMagicSword.RunTime
             draw.DrawString("Name your hero:", ConsoleColor.DarkGray, 10, 45);
             Console.SetCursorPosition(62, 10);
             Console.ResetColor();
-            return Console.ReadLine();
+            string name = Console.ReadLine();
+            while (string.IsNullOrWhiteSpace(name))
+            {
+                Console.SetCursorPosition(62, 10);
+                name = Console.ReadLine();
+            }
+            return name;
         }
         private void DrawChooseHeroFromConsole(int choice, Hero hero)
         {
@@ -93,7 +99,7 @@ namespace SazaracsMagicSword.RunTime
             draw.DrawImage(hero.image,ConsoleColor.Black,15,4);
 
             draw.DrawString("Strength: " + hero.statistics.strength, ConsoleColor.Black, 33, 45);
-            draw.DrawString("Dexterity: " + hero.statistics.dextirity, ConsoleColor.Black, 35, 45);
+            draw.DrawString("Dexterity: " + hero.statistics.dexterity, ConsoleColor.Black, 35, 45);
             draw.DrawString("Willpower: " + hero.statistics.willpower, ConsoleColor.Black, 37, 45);
 
             draw.DrawString("Weapon: " + hero.weapon.name, ConsoleColor.Black, 20, 45);

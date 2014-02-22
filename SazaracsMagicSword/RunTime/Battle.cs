@@ -62,17 +62,41 @@ namespace SazaracsMagicSword.RunTime
             }
             else
             {
-                // dice for new item for TheHero
                 if (BossFight)
                 {
+                    TheHero.level++;
+
+                    if (TheHero.level > 3)
+                    {
+                        // Game compleated
+                    }
+
+                    MenuChangeWeapon newWeapon = new MenuChangeWeapon();
+                    newWeapon.GetRandomWeapon(TheHero);
+
                     Loader load = new Loader();
                     Levels levels = new Levels();
                     NPCsOfCurrentLevel.Clear();
-                    TheHero.level++;
-                    matrix = load.LoadLevel(matrix, levels.Level2, TheHero, NPCsOfCurrentLevel);
+                    string[] level;
+                    switch (hero.level)
+                    {
+                        case 2: level = levels.Level2; break;
+                        case 3: level = levels.Level3; break;
+                        default: level = levels.Level1; break;
+                    }
+
+                    matrix = load.LoadLevel(matrix, level, TheHero, NPCsOfCurrentLevel);
+                }
+                else if (!escapeSuccessful)
+                {
+                    DiceRoller dice = new DiceRoller();
+                    if (dice.NewDice(0.5))
+                    {
+                        MenuChangeWeapon newWeapon = new MenuChangeWeapon();
+                        newWeapon.GetRandomWeapon(TheHero);
+                    }
                 }
             }
-
         }
         void DrawBattle(Hero hero, Enemy enemy)
         {
@@ -93,7 +117,7 @@ namespace SazaracsMagicSword.RunTime
                 enemyLifeBarBlocks = 0;
             }
 
-            draw.DrawString(hero.Name, ConsoleColor.DarkGray, 2, 5);
+            draw.DrawString(hero.Name + " (" + hero.level + ")", ConsoleColor.DarkGray, 2, 5);
             draw.DrawString(new string(' ', heroLifeBarBlocks), ConsoleColor.DarkRed, 3, 15);
             draw.DrawString(currentHeroHP + " / " + totalHeroHP, ConsoleColor.DarkRed, 3, 36);
             draw.DrawImage(hero.image, ConsoleColor.Black, 5, 5);
@@ -126,7 +150,7 @@ namespace SazaracsMagicSword.RunTime
             {
                 int damage = hero.weapon.damage;
                 damage = damage * hero.statistics.strength / 15;
-                damage = (int)((double)damage / enemy.statistics.dextirity * 15);
+                damage = (int)((double)damage / enemy.statistics.dexterity * 15);
                 currentEnemyHP -= damage;
                 AddMessage(hero.Name + " used " + hero.weapon.name + " (" + damage + ")");
                 DrawBattle(hero, enemy);
@@ -141,7 +165,7 @@ namespace SazaracsMagicSword.RunTime
                 int damageOnSelf = hero.weapon.magic.damageOnSelf;
                 damageOnSelf = damageOnSelf * hero.statistics.willpower / 15;
 
-                damage = (int)((double)damage / enemy.statistics.dextirity * 15);
+                damage = (int)((double)damage / enemy.statistics.dexterity * 15);
 
                 currentEnemyHP -= damage;
                 currentHeroHP -= damageOnSelf;
@@ -178,8 +202,8 @@ namespace SazaracsMagicSword.RunTime
             if (!enemyIsCrippled)
             {
                 int damage = enemy.weapon.damage;
-                damage = damage * (enemy.statistics.strength + enemy.statistics.dextirity + enemy.statistics.willpower) / 30;
-                damage = (int)((double)damage / hero.statistics.dextirity * 15);
+                damage = damage * (enemy.statistics.strength + enemy.statistics.dexterity + enemy.statistics.willpower) / 30;
+                damage = (int)((double)damage / hero.statistics.dexterity * 15);
 
                 currentHeroHP -= damage;
                 AddMessage(enemy.Name + " used " + enemy.weapon.name + " (" + damage + ")");

@@ -56,6 +56,7 @@
     <Compile Include="MainMenu.cs" />
     <Compile Include="RunTime\Battle.cs" />
     <Compile Include="RunTime\Conversation.cs" />
+    <Compile Include="RunTime\MenuChangeWeapon.cs" />
     <Compile Include="RunTime\MenuChooseHero.cs" />
     <Compile Include="RunTime\DiceRoller.cs" />
     <Compile Include="RunTime\Drawer.cs" />
