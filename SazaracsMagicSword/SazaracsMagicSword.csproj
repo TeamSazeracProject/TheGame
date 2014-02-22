@@ -23,6 +23,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
     <PlatformTarget>x86</PlatformTarget>
@@ -52,6 +53,7 @@
     <Compile Include="Data\NPCs.cs" />
     <Compile Include="Data\VisualElements.cs" />
     <Compile Include="GameObjects\DangerousTerritory.cs" />
+    <Compile Include="MainMenu.cs" />
     <Compile Include="RunTime\Battle.cs" />
     <Compile Include="RunTime\Conversation.cs" />
     <Compile Include="RunTime\DiceRoller.cs" />

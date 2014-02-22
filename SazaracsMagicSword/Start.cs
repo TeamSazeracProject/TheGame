@@ -9,7 +9,7 @@ using SazaracsMagicSword.Data;
 namespace SazaracsMagicSword
 {
     class Start
-    {
+    {        
         static Loader load = new Loader();
         static Drawer draw = new Drawer();
         static Levels levels = new Levels();
@@ -24,6 +24,7 @@ namespace SazaracsMagicSword
 
         static void Main(string[] args)
         {
+            MainMenu.StartMainMenu();
             Console.WindowHeight = height;
             Console.WindowWidth = width;
 
