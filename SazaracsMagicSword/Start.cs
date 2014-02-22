@@ -30,7 +30,8 @@ namespace SazaracsMagicSword
 
             /*hero = new MenuChooseHero().ChooseHeroFromConsole();
             Console.Clear();*/
-            MainMenu.StartMainMenu();
+            /*MainMenu.StartMainMenu();*/
+            hero = new HeroTypes().TestersChoice();
 
             //2) Dynamic game
             matrix = load.LoadLevel(matrix, levels.Level1, hero, NPCsOfCurrentLevel);
@@ -134,7 +135,14 @@ namespace SazaracsMagicSword
                 if (dice.NewDice(matrix[r, c].content.Chance))
                 {
                     Battle battle = new Battle();
-                    battle.StartBattle(hero, matrix[r, c].content.enemyToAppear);
+                    battle.StartBattle
+                        (
+                        hero,
+                        matrix[r, c].content.enemyToAppear, 
+                        matrix[r, c].content.Chance == 1,
+                        matrix,
+                        NPCsOfCurrentLevel
+                        );
                     draw.DrawMatrixInConsole(matrix);
                 }
             }

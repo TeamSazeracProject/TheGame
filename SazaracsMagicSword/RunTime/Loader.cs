@@ -100,12 +100,17 @@ namespace SazaracsMagicSword.RunTime
                     }
                     else if (level[r][c].Equals('\''))
                     {
-                        matrix[r, c] = VisualLoader.Desert(sizeOfVisualElements); /// will be BOSS
+                        matrix[r, c] = VisualLoader.Desert(sizeOfVisualElements);
+                        matrix[r, c].content = dangersOnThisLevel[3]; /// will be BOSS
                     }
                     else if (level[r][c].Equals('H'))
                     {
                         matrix[r, c] = VisualLoader.Grass(sizeOfVisualElements);
                         hero.position = new Position(r, c);
+                    }
+                    else
+                    {
+                        matrix[r, c] = VisualLoader.Empty(sizeOfVisualElements);
                     }
                 }
             }

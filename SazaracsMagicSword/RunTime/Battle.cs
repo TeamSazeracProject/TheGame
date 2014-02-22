@@ -21,7 +21,11 @@ namespace SazaracsMagicSword.RunTime
         Hero hero;
         Enemy enemy;
 
-        public void StartBattle(Hero TheHero, Enemy TheEnemy)
+        public void StartBattle(Hero TheHero,
+                                Enemy TheEnemy, 
+                                bool BossFight, 
+                                VisualElement[,] matrix, 
+                                List<NPC> NPCsOfCurrentLevel)
         {
             hero = TheHero;
             enemy = TheEnemy;
@@ -50,6 +54,23 @@ namespace SazaracsMagicSword.RunTime
                 DrawBattle(hero, enemy);
 
                 enemyIsCrippled = false;
+            }
+
+            if (currentHeroHP < 1)
+            {
+                // game over
+            }
+            else
+            {
+                // dice for new item for TheHero
+                if (BossFight)
+                {
+                    Loader load = new Loader();
+                    Levels levels = new Levels();
+                    NPCsOfCurrentLevel.Clear();
+                    TheHero.level++;
+                    matrix = load.LoadLevel(matrix, levels.Level2, TheHero, NPCsOfCurrentLevel);
+                }
             }
 
         }
