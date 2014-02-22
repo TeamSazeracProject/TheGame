@@ -28,9 +28,9 @@ namespace SazaracsMagicSword
 
             //1) Main menu (new game / load game)
 
-            /*hero = new MenuChooseHero().ChooseHeroFromConsole();
-            Console.Clear();*/
-            /*MainMenu.StartMainMenu();*/
+            //hero = new MenuChooseHero().ChooseHeroFromConsole();
+            //Console.Clear();
+            MainMenu.StartMainMenu();
             hero = new HeroTypes().TestersChoice();
 
             //2) Dynamic game

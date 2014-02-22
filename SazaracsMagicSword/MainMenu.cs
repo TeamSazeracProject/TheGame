@@ -1,4 +1,6 @@
-﻿using System;
+﻿using SazaracsMagicSword.RunTime;
+using SazaracsMagicSword.Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,63 +9,59 @@ namespace SazaracsMagicSword
 {
     public static class MainMenu
     {
+        
         public static void StartMainMenu()
         {
-            bool notDecided = true;
-            int choose = 9;
-            Console.WindowHeight = 50;
-            Console.WindowWidth = 110;
-
-            Console.SetCursorPosition(35, 9);
-            Console.WriteLine("New Game");
-            Console.SetCursorPosition(35, 12);
-            Console.WriteLine("Load Game");
-            Console.SetCursorPosition(35, 15);
-            Console.WriteLine("Exit");
-
-            while (notDecided)
+            int choice = 1;
+            
+            DrawChoosen(choice);
+            var pressedKey = Console.ReadKey();
+            while (!pressedKey.Key.Equals(ConsoleKey.Enter))
             {
-                Console.SetCursorPosition(30, choose);
-                Console.WriteLine("==>");
-
-                var pressedKey = Console.ReadKey();
-                if (pressedKey.Key.Equals(ConsoleKey.DownArrow))
+                if (pressedKey.Key.Equals(ConsoleKey.UpArrow))
                 {
-                    SetArrowPosition(choose);
-                    choose += 3;
-                    choose = CheckSetterPosition(choose);
+                    if (choice > 1)
+                    {
+                        choice--;                        
+                    }
+                    else
+                    {
+                        choice = 3;                      
+                    }
                 }
-                else if (pressedKey.Key.Equals(ConsoleKey.UpArrow))
+                else if (pressedKey.Key.Equals(ConsoleKey.DownArrow))
                 {
-                    SetArrowPosition(choose);
-                    choose += -3;
-                    choose = CheckSetterPosition(choose);
+                    if (choice < 3)
+                    {
+                        choice++;                       
+                    }
+                    else
+                    {
+                        choice = 1;                       
+                    }
                 }
-
+                DrawChoosen(choice);
+                pressedKey = Console.ReadKey();
             }
 
         }
 
-        private static void SetArrowPosition(int choose)
+        private static void DrawChoosen(int choice)
         {
-            Console.SetCursorPosition(30, choose);
-            Console.WriteLine("     ");
-        }
+            Drawer draw = new Drawer();
+            Images startImage = new Images();
+            string choicePointer = "==>";
 
-        private static int CheckSetterPosition(int choose)
-        {
-            if (choose < 9 || choose > 15)
-            {
-                if (choose < 9)
-                {
-                    choose = 15;
-                }
-                else
-                {
-                    choose = 9;
-                }
-            }
-            return choose;
+            Console.ResetColor();
+            Console.Clear();
+            draw.DrawImage(startImage.IntroText, ConsoleColor.Black, 5, 10);
+            draw.DrawString("New Game", ConsoleColor.Black, 24, 40);
+            draw.DrawString("Load Game", ConsoleColor.Black, 26, 40);
+            draw.DrawString("Exit", ConsoleColor.Black, 28, 40);
+
+            draw.DrawString(choicePointer, ConsoleColor.DarkMagenta, (22 + choice * 2), 35);
+
+            Console.SetCursorPosition(0, 0);
         }
     }
 }
