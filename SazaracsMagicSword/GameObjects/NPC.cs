@@ -7,21 +7,21 @@ namespace SazaracsMagicSword.GameObjects
 {
     class NPC : Human
     {
-        public List<string> conversation;
+        //public List<string> conversation;
         public Position position;
-
-        public NPC(string Name, List<string> conversation, string[] image)
+        public string conversationPath;
+        public NPC(string Name, string conversationPath, string[] image)
         {
             if (string.IsNullOrEmpty(Name))
             {
                 throw new ArgumentException("Name is empty");
             }
-            if (conversation.Count == 0)
+            if (conversationPath == null)
             {
                 throw new ArgumentException("Conversation is empty");
             }
             this.Name = Name;
-            this.conversation = conversation;
+            this.conversationPath = conversationPath;
             this.image = image;
         }
     }

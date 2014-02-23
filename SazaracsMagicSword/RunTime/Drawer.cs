@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using SazaracsMagicSword.GameObjects;
 using System.Threading;
+using System.IO;
 
 namespace SazaracsMagicSword.RunTime
 {
@@ -12,26 +13,48 @@ namespace SazaracsMagicSword.RunTime
         void DrawPointers(int choice)
         {
         }
-        public void PrintConversation(List<string> introConversation)
-        {
-            foreach (var item in introConversation)
+        public void PrintConversation(string conversationPath)
+        {          
+            string line;
+            using (StreamReader currentConversation = new StreamReader(conversationPath))
             {
-                Console.SetCursorPosition(15, 40);
-                int sleepTime = 30;
-                Console.ForegroundColor = ConsoleColor.Green;
-                foreach (var character in item)
+                while ((line = currentConversation.ReadLine()) != null)
                 {
-                    Thread.Sleep(sleepTime);
-                    Console.Write(character);
+                    Console.SetCursorPosition(15, 40);
+                    int sleepTime = 30;
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    foreach (var character in line)
+                    {
+                        Thread.Sleep(sleepTime);
+                        Console.Write(character);
+                    }
+
+                    Console.ForegroundColor = ConsoleColor.Gray;
+                    Console.Write("\n\n\n                 press any key to continue...");
+                    Console.ReadKey();
+
+                    Console.SetCursorPosition(15, 40);
+                    Console.WriteLine(new string(' ', 100));
                 }
-
-                Console.ForegroundColor = ConsoleColor.Gray;
-                Console.Write("\n\n\n                 press any key to continue...");
-                Console.ReadKey();
-
-                Console.SetCursorPosition(15, 40);
-                Console.WriteLine(new string(' ',100));
             }
+            //foreach (var item in introConversation)
+            //{
+            //    Console.SetCursorPosition(15, 40);
+            //    int sleepTime = 30;
+            //    Console.ForegroundColor = ConsoleColor.Green;
+            //    foreach (var character in item)
+            //    {
+            //        Thread.Sleep(sleepTime);
+            //        Console.Write(character);
+            //    }
+
+            //    Console.ForegroundColor = ConsoleColor.Gray;
+            //    Console.Write("\n\n\n                 press any key to continue...");
+            //    Console.ReadKey();
+
+            //    Console.SetCursorPosition(15, 40);
+            //    Console.WriteLine(new string(' ',100));
+            //}
         }
         public void DrawString(string stringToWrite, ConsoleColor background, int row, int col)
         {

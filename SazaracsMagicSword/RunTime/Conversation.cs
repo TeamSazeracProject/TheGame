@@ -18,7 +18,7 @@ namespace SazaracsMagicSword.RunTime
             draw.DrawImage(hero.image, ConsoleColor.Black, 5, 5);
             draw.DrawImage(npc.image, ConsoleColor.Black, 5, 55);
             
-            draw.PrintConversation(npc.conversation);
+            draw.PrintConversation(npc.conversationPath);
 
             Console.ReadLine();
             Console.Clear();

@@ -77,7 +77,18 @@
   <ItemGroup>
     <None Include="GameObjects\ObjectsDiagram.cd" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Data\Conversations\FilthyDog.txt" />
+    <Content Include="Data\Conversations\TheAngryMan.txt" />
+    <Content Include="Data\Conversations\TheAssasin.txt" />
+    <Content Include="Data\Conversations\TheBoringGuy.txt" />
+    <Content Include="Data\Conversations\TheDrunk.txt" />
+    <Content Include="Data\Conversations\TheGuardian.txt" />
+    <Content Include="Data\Conversations\TheQuestGiver.txt" />
+    <Content Include="Data\Conversations\TheSmith.txt" />
+    <Content Include="Data\Conversations\TheThroll.txt" />
+    <Content Include="Data\Conversations\TheWitch.txt" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
