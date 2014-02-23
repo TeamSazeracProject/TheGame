@@ -20,9 +20,9 @@ namespace SazaracsMagicSword.GameObjects
 
             this.hitPoints = this.strength * 5 + this.dexterity * 2 + this.willpower;
         }
-        public void RefreshHP()
+        public int RefreshHP()
         {
-            this.hitPoints = this.strength * 5 + this.dexterity * 2 + this.willpower;
+            return this.strength * 5 + this.dexterity * 2 + this.willpower;
         }
     }
 }

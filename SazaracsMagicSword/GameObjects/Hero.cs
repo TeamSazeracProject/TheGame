@@ -35,7 +35,7 @@ namespace SazaracsMagicSword.GameObjects
             this.statistics.strength += this.levelUpStats.strength;
             this.statistics.dexterity += this.levelUpStats.dexterity;
             this.statistics.willpower += this.levelUpStats.willpower;
-            this.statistics.RefreshHP();
+            this.statistics.hitPoints = this.statistics.RefreshHP();
         }
         public void Move(Direction direction)
         {

@@ -52,6 +52,10 @@ namespace SazaracsMagicSword.RunTime
                 pressedKey = Console.ReadKey();
             }
             hero.Name = GetHeroName();
+            if (hero.Name.Equals("Cheater"))
+            {
+                hero = new HeroTypes().Cheater();
+            }
             return hero;
         }
         private void ChangeHero()

@@ -64,7 +64,7 @@ namespace SazaracsMagicSword.RunTime
             {
                 if (BossFight)
                 {
-                    TheHero.level++;
+                    TheHero.LevelUp();
 
                     if (TheHero.level > 3)
                     {
@@ -151,7 +151,10 @@ namespace SazaracsMagicSword.RunTime
                 int damage = hero.weapon.damage;
                 damage = damage * hero.statistics.strength / 15;
                 damage = (int)((double)damage / enemy.statistics.dexterity * 15);
+                damage += damage * (hero.level - 1) / 3;
+
                 currentEnemyHP -= damage;
+
                 AddMessage(hero.Name + " used " + hero.weapon.name + " (" + damage + ")");
                 DrawBattle(hero, enemy);
                 DrawDamage(true);
@@ -166,6 +169,9 @@ namespace SazaracsMagicSword.RunTime
                 damageOnSelf = damageOnSelf * hero.statistics.willpower / 15;
 
                 damage = (int)((double)damage / enemy.statistics.dexterity * 15);
+
+                damage += damage * (hero.level - 1) / 3;
+                damageOnSelf += damageOnSelf * (hero.level - 1) / 3;
 
                 currentEnemyHP -= damage;
                 currentHeroHP -= damageOnSelf;
@@ -202,7 +208,7 @@ namespace SazaracsMagicSword.RunTime
             if (!enemyIsCrippled)
             {
                 int damage = enemy.weapon.damage;
-                damage = damage * (enemy.statistics.strength + enemy.statistics.dexterity + enemy.statistics.willpower) / 30;
+                damage = damage * (enemy.statistics.strength + enemy.statistics.dexterity + enemy.statistics.willpower) / 35;
                 damage = (int)((double)damage / hero.statistics.dexterity * 15);
 
                 currentHeroHP -= damage;
