@@ -30,9 +30,11 @@ namespace SazaracsMagicSword
 
            // hero = new MenuChooseHero().ChooseHeroFromConsole();
           //  Console.Clear();
-            MainMenu.StartMainMenu();
-           hero = new HeroTypes().TestersChoice();
-
+            int mainMenuChoosen = MainMenu.StartMainMenu();
+            hero = MainMenu.SelectedChoice(mainMenuChoosen);
+          // hero = new HeroTypes().TestersChoice();
+            
+            
             //2) Dynamic game
             matrix = load.LoadLevel(matrix, levels.Level1, hero, NPCsOfCurrentLevel);
             //VisibleMatrix = load.LoadVisibleLevel(VisibleMatrix, matrix, hero); // throws an exception...

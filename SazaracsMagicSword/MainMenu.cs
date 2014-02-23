@@ -4,13 +4,14 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using SazaracsMagicSword.GameObjects;
 
 namespace SazaracsMagicSword
 {
     public static class MainMenu
     {
         
-        public static void StartMainMenu()
+        public static int StartMainMenu()
         {
             int choice = 1;
             
@@ -46,8 +47,9 @@ namespace SazaracsMagicSword
                 pressedKey = Console.ReadKey();
             }
 
-            SelectedChoice(choice);
+         return choice;
 
+          
         }
 
         private static void DrawChoosen(int choice)
@@ -67,17 +69,19 @@ namespace SazaracsMagicSword
 
             Console.SetCursorPosition(0, 0);
         }
-        private static void SelectedChoice(int choice)
+        public static Hero SelectedChoice(int choice)
         {
-           
+            MenuChooseHero newGame = new MenuChooseHero();
+            Hero currentHero = new Hero();
             switch (choice)
             {
-                case 1: MenuChooseHero newGame = new MenuChooseHero();
-                    newGame.ChooseHeroFromConsole() ;break;
-                case 2: throw new NotImplementedException();
+                case 1: currentHero =  newGame.ChooseHeroFromConsole(); break;
+                case 2: throw new NotImplementedException(); 
                 case 3: Environment.Exit(0); break;
                 default: break;
             }
+
+            return currentHero;
         }
     }
 }

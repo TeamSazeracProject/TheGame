@@ -5,7 +5,7 @@ using System.IO;
 
 namespace SazaracsMagicSword.GameObjects
 {
-    class Hero : Human, IMove
+    public class Hero : Human, IMove
     {
         public int level = 1;
         public Statistics statistics;
@@ -24,6 +24,10 @@ namespace SazaracsMagicSword.GameObjects
             this.weapon = weapon;
             this.levelUpStats = levelUpStats;
             this.image = image;
+        }
+        public Hero()
+        {
+
         }
         public void LevelUp()
         {
