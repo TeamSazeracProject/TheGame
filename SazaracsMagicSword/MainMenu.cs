@@ -23,10 +23,12 @@ namespace SazaracsMagicSword
                     if (choice > 1)
                     {
                         choice--;                        
+                        
                     }
                     else
                     {
-                        choice = 3;                      
+                        choice = 3;
+                        
                     }
                 }
                 else if (pressedKey.Key.Equals(ConsoleKey.DownArrow))
@@ -43,6 +45,8 @@ namespace SazaracsMagicSword
                 DrawChoosen(choice);
                 pressedKey = Console.ReadKey();
             }
+
+            SelectedChoice(choice);
 
         }
 
@@ -62,6 +66,18 @@ namespace SazaracsMagicSword
             draw.DrawString(choicePointer, ConsoleColor.DarkMagenta, (22 + choice * 2), 35);
 
             Console.SetCursorPosition(0, 0);
+        }
+        private static void SelectedChoice(int choice)
+        {
+           
+            switch (choice)
+            {
+                case 1: MenuChooseHero newGame = new MenuChooseHero();
+                    newGame.ChooseHeroFromConsole() ;break;
+                case 2: throw new NotImplementedException();
+                case 3: Environment.Exit(0); break;
+                default: break;
+            }
         }
     }
 }
