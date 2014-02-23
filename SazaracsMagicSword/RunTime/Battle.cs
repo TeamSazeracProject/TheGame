@@ -146,6 +146,15 @@ namespace SazaracsMagicSword.RunTime
         }
         void ProcessInput(ConsoleKeyInfo pressedKey)
         {
+            if (pressedKey.Key.Equals(ConsoleKey.Escape))
+            {
+                MenuInGame menuInGame = new MenuInGame();
+                menuInGame.Menu(hero);
+                Console.ResetColor();
+                Console.Clear();
+                DrawBattle(hero, enemy);
+            }
+
             if (pressedKey.Key.Equals(ConsoleKey.A))
             {
                 int damage = hero.weapon.damage;

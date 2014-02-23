@@ -15,7 +15,7 @@ namespace SazaracsMagicSword.RunTime
         string choicePointerRight = "<<";
         int centerRow = Console.WindowHeight / 2;
         int centerCol = Console.WindowWidth / 2;
-        string[] options = { "Resume the game", "Hero statistics", "Load Game", "Quit Game" };
+        string[] options = { "Resume The Game", "Hero Statistics", "Save Game", "Load Game", "Quit Game" };
 
         public void Menu(Hero hero)
         {
@@ -56,8 +56,9 @@ namespace SazaracsMagicSword.RunTime
             {
                 case 1: return;
                 case 2: MenuShowHeroStats(hero); break;
-                case 3: throw new NotImplementedException("Loading a Save is not implemented.");
-                case 4: Environment.Exit(0); break;
+                case 3: throw new NotImplementedException("Saving is not implemented.");
+                case 4: throw new NotImplementedException("Loading a Save is not implemented.");
+                case 5: Environment.Exit(0); break;
                 default:
                     break;
             }
@@ -68,7 +69,7 @@ namespace SazaracsMagicSword.RunTime
             Drawer draw = new Drawer();
             ConsoleColor color = ConsoleColor.White;
 
-            for (int i = 0; i < 10; i++) // draw a box
+            for (int i = 0; i < 15; i++) // draw a box
             {
                 draw.DrawString(whiteSpace, color, (centerRow - 5) + i, (centerCol - whiteSpace.Length / 2));
             }
@@ -86,6 +87,8 @@ namespace SazaracsMagicSword.RunTime
             }
             draw.DrawString(choicePointerLeft, color, (centerRow - 5) + 2 * choice, (centerCol - options[choice - 1].Length / 2) - choicePointerLeft.Length - 1);
             draw.DrawString(choicePointerRight, color, (centerRow - 5) + 2 * choice, (centerCol + options[choice - 1].Length / 2) + 2);
+
+            Console.SetCursorPosition(0, 0);
         }
         private void MenuShowHeroStats(Hero hero)
         {
