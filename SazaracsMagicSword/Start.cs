@@ -28,21 +28,16 @@ namespace SazaracsMagicSword
 
             //1) Main menu (new game / load game)
 
-           // hero = new MenuChooseHero().ChooseHeroFromConsole();
-          //  Console.Clear();
             int mainMenuChoosen = MainMenu.StartMainMenu();
             hero = MainMenu.SelectedChoice(mainMenuChoosen);
-          // hero = new HeroTypes().TestersChoice();
-            
             
             //2) Dynamic game
             matrix = load.LoadLevel(matrix, levels.Level1, hero, NPCsOfCurrentLevel);
             //VisibleMatrix = load.LoadVisibleLevel(VisibleMatrix, matrix, hero); // throws an exception...
+            //draw.DrawMatrixInConsole(VisibleMatrix);
             draw.DrawMatrixInConsole(matrix);
             while (true)
             {
-                CheckHeroPosition(); // Conversations && Battles
-
                 draw.DrawHero(hero);
                 Console.SetCursorPosition(80, 0);
                 ConsoleKeyInfo pressedKey = Console.ReadKey();
@@ -59,6 +54,7 @@ namespace SazaracsMagicSword
                 {
                     draw.DrawInConsole(matrix[hero.position.row, hero.position.col], hero.position.row, hero.position.col);
                     hero.Move(Direction.up);
+                    CheckHeroPosition();
                 }
             }
             else if (pressedKey.Key.Equals(ConsoleKey.DownArrow))
@@ -67,6 +63,7 @@ namespace SazaracsMagicSword
                 {
                     draw.DrawInConsole(matrix[hero.position.row, hero.position.col], hero.position.row, hero.position.col);
                     hero.Move(Direction.down);
+                    CheckHeroPosition();
                 }
             }
             else if (pressedKey.Key.Equals(ConsoleKey.LeftArrow))
@@ -75,6 +72,7 @@ namespace SazaracsMagicSword
                 {
                     draw.DrawInConsole(matrix[hero.position.row, hero.position.col], hero.position.row, hero.position.col);
                     hero.Move(Direction.left);
+                    CheckHeroPosition();
                 }
             }
             else if (pressedKey.Key.Equals(ConsoleKey.RightArrow))
@@ -83,6 +81,7 @@ namespace SazaracsMagicSword
                 {
                     draw.DrawInConsole(matrix[hero.position.row, hero.position.col], hero.position.row, hero.position.col);
                     hero.Move(Direction.right);
+                    CheckHeroPosition();
                 }
             }
             else if (pressedKey.Key.Equals(ConsoleKey.Enter))
@@ -100,6 +99,14 @@ namespace SazaracsMagicSword
                         }
                     }
                 }
+            }
+            else if (pressedKey.Key.Equals(ConsoleKey.Escape))
+            {
+                MenuInGame menuInGame = new MenuInGame();
+                menuInGame.Menu(hero);
+                Console.ResetColor();
+                Console.Clear();
+                draw.DrawMatrixInConsole(matrix);
             }
         }
 

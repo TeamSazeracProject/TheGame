@@ -111,8 +111,8 @@ namespace SazaracsMagicSword.RunTime
 
             draw.DrawString("Magic: " + hero.weapon.magic.Name, ConsoleColor.Black, 23, 45);
             draw.DrawString("Magic Damage: " + hero.weapon.magic.damage, ConsoleColor.Black, 24, 45);
-            draw.DrawString("Magic Damage on Self: " + hero.weapon.magic.damageOnSelf, ConsoleColor.Black, 24, 45);
-            draw.DrawString("Magic Chance to Stun: " + hero.weapon.magic.chanceToStun, ConsoleColor.Black, 24, 45);
+            draw.DrawString("Magic Damage on Self: " + hero.weapon.magic.damageOnSelf, ConsoleColor.Black, 25, 45);
+            draw.DrawString("Magic Chance to Stun: " + hero.weapon.magic.chanceToStun, ConsoleColor.Black, 26, 45);
 
             Console.SetCursorPosition(0, 0);
         }

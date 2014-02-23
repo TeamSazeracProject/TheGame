@@ -71,6 +71,7 @@
     <Compile Include="GameObjects\Position.cs" />
     <Compile Include="GameObjects\Statistics.cs" />
     <Compile Include="GameObjects\VisualElement.cs" />
+    <Compile Include="RunTime\MenuInGame.cs" />
     <Compile Include="Start.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

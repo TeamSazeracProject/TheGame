@@ -198,6 +198,7 @@ namespace SazaracsMagicSword.RunTime
                 else
                 {
                     AddMessage(hero.Name + " failed to escape");
+                    DrawBattle(hero, enemy);
                 }
             }
             else ProcessInput(Console.ReadKey());
