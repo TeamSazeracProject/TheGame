@@ -40,19 +40,21 @@ namespace SazaracsMagicSword.RunTime
             return VisibleMatrix;
         }
 
-        public VisualElement[,] LoadLevel(VisualElement[,] matrix, string[] level, Hero hero, List<NPC> emptyNPCList)
+        public VisualElement[,] LoadLevel(VisualElement[,] matrix, Hero hero, List<NPC> emptyNPCList)
         {
             Dangers dangers = new Dangers();
             VisualElements VisualLoader = new VisualElements();
             NPCs npcs = new NPCs();
             emptyNPCList.Clear();
+            Levels levels = new Levels();
 
+            string[] level = levels.Level1;
             List<DangerousTerritory> dangersOnThisLevel = dangers.Level1Dangers;
             switch (hero.level)
             {
-                case 1: dangersOnThisLevel = dangers.Level1Dangers; break;
-                case 2: dangersOnThisLevel = dangers.Level2Dangers; break;
-                case 3: dangersOnThisLevel = dangers.Level3Dangers; break;
+                case 1: dangersOnThisLevel = dangers.Level1Dangers; level = levels.Level1; break;
+                case 2: dangersOnThisLevel = dangers.Level2Dangers; level = levels.Level2; break;
+                case 3: dangersOnThisLevel = dangers.Level3Dangers; level = levels.Level3; break;
                 default: break;
             }
 
@@ -106,10 +108,11 @@ namespace SazaracsMagicSword.RunTime
                     else if (level[r][c].Equals('H'))
                     {
                         matrix[r, c] = VisualLoader.Grass(sizeOfVisualElements);
-                        
-                            hero.position = new Position(r, c);
 
-                        
+                        if (hero.position.row == 0 && hero.position.col == 0)
+                        {
+                            hero.position = new Position(r, c);
+                        } 
                     }
                     else
                     {

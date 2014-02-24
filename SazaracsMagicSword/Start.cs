@@ -40,17 +40,10 @@ namespace SazaracsMagicSword
                 hero = LoadSaveGame.Load();
 
             }
-            if (hero.level == 2)
-            {
-                currentLevel = levels.Level2;
-            }
-            else if (hero.level == 3)
-            {
-                currentLevel = levels.Level3;
-            }
-            //2) Dynamic game
-            matrix = load.LoadLevel(matrix, currentLevel, hero, NPCsOfCurrentLevel);
+            matrix = load.LoadLevel(matrix, hero, NPCsOfCurrentLevel);
             //VisibleMatrix = load.LoadVisibleLevel(VisibleMatrix, matrix, hero); // throws an exception...
+
+            //2) Dynamic game
             //draw.DrawMatrixInConsole(VisibleMatrix);
             draw.DrawMatrixInConsole(matrix);
             while (true)

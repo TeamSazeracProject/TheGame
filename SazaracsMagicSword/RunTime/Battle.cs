@@ -77,15 +77,8 @@ namespace SazaracsMagicSword.RunTime
                     Loader load = new Loader();
                     Levels levels = new Levels();
                     NPCsOfCurrentLevel.Clear();
-                    string[] level;
-                    switch (hero.level)
-                    {
-                        case 2: level = levels.Level2; break;
-                        case 3: level = levels.Level3; break;
-                        default: level = levels.Level1; break;
-                    }
 
-                    matrix = load.LoadLevel(matrix, level, TheHero, NPCsOfCurrentLevel);
+                    matrix = load.LoadLevel(matrix, TheHero, NPCsOfCurrentLevel);
                 }
                 else if (!escapeSuccessful)
                 {
