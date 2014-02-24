@@ -24,6 +24,7 @@ namespace SazaracsMagicSword
 
         static void Main(string[] args)
         {
+            Console.Title = "SazeracMagicSword";
             Console.WindowHeight = height;
             Console.WindowWidth = width;
 
