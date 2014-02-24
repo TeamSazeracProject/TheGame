@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 
 namespace SazaracsMagicSword.GameObjects
-{
+{   [Serializable]
     public class Magic
     {
         public string Name;

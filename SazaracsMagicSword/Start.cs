@@ -9,7 +9,7 @@ using SazaracsMagicSword.Data;
 namespace SazaracsMagicSword
 {
     class Start
-    {        
+    {       
         static Loader load = new Loader();
         static Drawer draw = new Drawer();
         static Levels levels = new Levels();
@@ -29,8 +29,15 @@ namespace SazaracsMagicSword
             //1) Main menu (new game / load game)
 
             int mainMenuChoosen = MainMenu.StartMainMenu();
-            hero = MainMenu.SelectedChoice(mainMenuChoosen);
-            
+            if (mainMenuChoosen == 1)
+            {
+                hero = MainMenu.SelectedChoice(mainMenuChoosen);
+            }
+            else if (mainMenuChoosen == 2)
+            {
+                hero = LoadSaveGame.Load();
+            }
+           
             //2) Dynamic game
             matrix = load.LoadLevel(matrix, levels.Level1, hero, NPCsOfCurrentLevel);
             //VisibleMatrix = load.LoadVisibleLevel(VisibleMatrix, matrix, hero); // throws an exception...
@@ -104,6 +111,15 @@ namespace SazaracsMagicSword
             {
                 MenuInGame menuInGame = new MenuInGame();
                 menuInGame.Menu(hero);
+                if (menuInGame.GetChoice == 3)
+                {
+                    LoadSaveGame.Save(hero);
+                }
+                else if (menuInGame.GetChoice == 4)
+                {
+                    hero = LoadSaveGame.Load();
+                }
+                
                 Console.ResetColor();
                 Console.Clear();
                 draw.DrawMatrixInConsole(matrix);

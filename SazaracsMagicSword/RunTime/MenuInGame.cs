@@ -9,6 +9,8 @@ namespace SazaracsMagicSword.RunTime
 {
     class MenuInGame
     {
+        
+        Hero shadow = null;
         int choice = 1;
         string whiteSpace = new string(' ', 30);
         string choicePointerLeft = ">>";
@@ -20,6 +22,7 @@ namespace SazaracsMagicSword.RunTime
         public void Menu(Hero hero)
         {
             DrawMenu();
+            this.shadow = hero;
             ConsoleKeyInfo pressedKey = Console.ReadKey();
             while (!pressedKey.Key.Equals(ConsoleKey.Enter))
             {
@@ -51,17 +54,24 @@ namespace SazaracsMagicSword.RunTime
                 }
                 pressedKey = Console.ReadKey();
             }
+            
 
             switch (choice)
             {
                 case 1: return;
                 case 2: MenuShowHeroStats(hero); break;
-                case 3: throw new NotImplementedException("Saving is not implemented.");
-                case 4: throw new NotImplementedException("Loading a Save is not implemented.");
+                case 3: //save
+                    break;
+                case 4: //load
+                    break;
                 case 5: Environment.Exit(0); break;
                 default:
                     break;
             }
+        }
+        public int GetChoice
+        {
+            get { return this.choice; }
         }
 
         private void DrawMenu()

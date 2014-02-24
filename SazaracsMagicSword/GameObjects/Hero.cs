@@ -5,6 +5,7 @@ using System.IO;
 
 namespace SazaracsMagicSword.GameObjects
 {
+    [Serializable]
     public class Hero : Human, IMove
     {
         public int level = 1;
