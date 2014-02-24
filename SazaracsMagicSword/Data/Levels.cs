@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 
 namespace SazaracsMagicSword.Data
-{
+{  [Serializable]
     class Levels
     {
         public int width = 80;

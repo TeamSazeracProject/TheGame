@@ -106,7 +106,11 @@ namespace SazaracsMagicSword.RunTime
                     else if (level[r][c].Equals('H'))
                     {
                         matrix[r, c] = VisualLoader.Grass(sizeOfVisualElements);
-                        hero.position = new Position(r, c);
+                        if (hero.position.row == 0 || hero.position.col == 0)
+                        {
+                            hero.position = new Position(r, c);
+                        }
+                        
                     }
                     else
                     {

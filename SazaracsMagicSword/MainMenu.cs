@@ -76,7 +76,8 @@ namespace SazaracsMagicSword
             switch (choice)
             {
                 case 1: currentHero =  newGame.ChooseHeroFromConsole(); break;
-                case 2: throw new NotImplementedException(); 
+                case 2://load
+                    break;
                 case 3: Environment.Exit(0); break;
                 default: break;
             }

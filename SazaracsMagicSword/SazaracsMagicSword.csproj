@@ -53,6 +53,7 @@
     <Compile Include="Data\NPCs.cs" />
     <Compile Include="Data\VisualElements.cs" />
     <Compile Include="GameObjects\DangerousTerritory.cs" />
+    <Compile Include="LoadSaveGame.cs" />
     <Compile Include="MainMenu.cs" />
     <Compile Include="RunTime\Battle.cs" />
     <Compile Include="RunTime\Conversation.cs" />
@@ -90,6 +91,9 @@
     <Content Include="Data\Conversations\TheSmith.txt" />
     <Content Include="Data\Conversations\TheTroll.txt" />
     <Content Include="Data\Conversations\TheWitch.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Data\Save\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

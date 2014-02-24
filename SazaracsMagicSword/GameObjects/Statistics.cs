@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 
 namespace SazaracsMagicSword.GameObjects
-{
+{  [Serializable]
     public struct Statistics
     {
         public int strength;
