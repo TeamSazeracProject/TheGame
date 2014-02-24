@@ -78,6 +78,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Data\Save\save.bin" />
     <None Include="GameObjects\ObjectsDiagram.cd" />
   </ItemGroup>
   <ItemGroup>
@@ -92,9 +93,7 @@
     <Content Include="Data\Conversations\TheTroll.txt" />
     <Content Include="Data\Conversations\TheWitch.txt" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Data\Save\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
