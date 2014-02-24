@@ -11,5 +11,5 @@ You: I have 3 copper coins and a lady bug.
 The Smith: Then Get Lost!
 You: Okey, okey! Sheesh...
 You: Okey, okey! Sheesh... I don't even have an inventory,
-..but he's yelling at me, as if I'm a theef.
+..but he's yelling at me, as if I'm a thief.
 You leave him alone.

@@ -35,7 +35,7 @@ namespace SazaracsMagicSword.Data
         new NPC("The Angry Man", @"../../Data/Conversations/TheAngryMan.txt",
             imgs.HumanWithSword),
         //// 7 "The Troll"
-        new NPC("The Troll",@"../../Data/Conversations/TheThroll.txt",
+        new NPC("The Troll",@"../../Data/Conversations/TheTroll.txt",
             imgs.HumanOld),
         //// 8 "The Drunk"
         new NPC("The Drunk",@"../../Data/Conversations/TheDrunk.txt",
