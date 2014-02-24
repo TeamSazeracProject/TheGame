@@ -88,7 +88,7 @@
     <Content Include="Data\Conversations\TheGuardian.txt" />
     <Content Include="Data\Conversations\TheQuestGiver.txt" />
     <Content Include="Data\Conversations\TheSmith.txt" />
-    <Content Include="Data\Conversations\TheThroll.txt" />
+    <Content Include="Data\Conversations\TheTroll.txt" />
     <Content Include="Data\Conversations\TheWitch.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
