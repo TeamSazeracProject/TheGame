@@ -40,6 +40,10 @@ namespace SazaracsMagicSword
                 hero = LoadSaveGame.Load();
 
             }
+            else
+            {
+                Environment.Exit(0);
+            }
             matrix = load.LoadLevel(matrix, hero, NPCsOfCurrentLevel);
             //VisibleMatrix = load.LoadVisibleLevel(VisibleMatrix, matrix, hero); // throws an exception...
 
