@@ -39,7 +39,7 @@ namespace SazaracsMagicSword.Data
 
         public Magic Flash { get { return this.basicSpells[0]; } }
         public Magic FireBall { get { return this.basicSpells[1]; } }
-        public Magic Freaze { get { return this.basicSpells[2]; } }
+        public Magic Freeze { get { return this.basicSpells[2]; } }
         public Magic Heal { get { return this.advancedSpells[0]; } }
         public Magic SlowTime { get { return this.advancedSpells[1]; } }
         public Magic RockSlide { get { return this.advancedSpells[2]; } }

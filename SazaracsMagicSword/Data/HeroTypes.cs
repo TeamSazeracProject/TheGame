@@ -14,8 +14,8 @@ namespace SazaracsMagicSword.Data
 
         public Hero Warrior()
         {
-            Weapon weap = weaps.WeakWeapons[2]; // Hammer
-            weap.changeMagic(spls.BasicSpells[0]); // of Flash
+            Weapon weap = weaps.Hammer;
+            weap.changeMagic(spls.Flash);
 
             return new Hero("hero",
                 new Statistics(25, 10, 5),
@@ -26,8 +26,8 @@ namespace SazaracsMagicSword.Data
         }
         public Hero Rogue()
         {
-            Weapon weap = weaps.WeakWeapons[1]; // short sword
-            weap.changeMagic(spls.BasicSpells[2]); // of Freeze
+            Weapon weap = weaps.ShortSword;
+            weap.changeMagic(spls.Freeze);
 
             return new Hero("hero",
                 new Statistics(10, 20, 10),
@@ -38,8 +38,8 @@ namespace SazaracsMagicSword.Data
         }
         public Hero Mage()
         {
-            Weapon weap = weaps.WeakWeapons[0]; // Knive
-            weap.changeMagic(spls.BasicSpells[1]); // of Fireball
+            Weapon weap = weaps.Knive;
+            weap.changeMagic(spls.FireBall);
 
             return new Hero("hero",
                 new Statistics(5, 10, 25),
