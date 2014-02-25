@@ -16,7 +16,7 @@ namespace SazaracsMagicSword.Data
                 0.1,
                 new Statistics(15, 15, 0),
                 0.9,
-                new Weapon("Claws", 5, null),
+                wpns.WeakClaws,
                 img.Dog
                 ),
             new Enemy(
@@ -24,7 +24,7 @@ namespace SazaracsMagicSword.Data
                 0.1,
                 new Statistics(15, 15, 0),
                 0.9,
-                new Weapon("Gnome Sword", 7, null),
+                wpns.GnomeSword,
                 img.Gnome
                 ),
             new Enemy(
@@ -52,7 +52,7 @@ namespace SazaracsMagicSword.Data
                 0.1,
                 new Statistics(20, 20, 0),
                 0.7,
-                new Weapon("Claws", 15, null),
+                wpns.AverageClaw,
                 img.Bear
                 ),
             new Enemy(
@@ -60,7 +60,7 @@ namespace SazaracsMagicSword.Data
                 0.1,
                 new Statistics(15, 25, 0),
                 0.7,
-                new Weapon("Venom", 15, null),
+                wpns.Venom,
                 img.Spider
                 )
         };
@@ -71,7 +71,7 @@ namespace SazaracsMagicSword.Data
                 0.1,
                 new Statistics(20, 20, 20),
                 0.5,
-                new Weapon("Hidden Dagers", 30, null),
+                wpns.HiddenDagers,
                 img.HumanWithTwoSabers
                 ),
             new Enemy(
@@ -79,7 +79,7 @@ namespace SazaracsMagicSword.Data
                 0.1,
                 new Statistics(10, 10, 40),
                 0.5,
-                new Weapon("Chaotic Magic", 35, null),
+                wpns.ChaoticMagic,
                 img.HumanWithStaff
                 ),
             new Enemy(
@@ -87,7 +87,7 @@ namespace SazaracsMagicSword.Data
                 0.1,
                 new Statistics(25, 10, 25),
                 0.5,
-                new Weapon("Demonic Magic", 40, null),
+                wpns.DemonicMagic,
                 img.Demon
                 )
         };
@@ -99,7 +99,7 @@ namespace SazaracsMagicSword.Data
                 0.1,
                 new Statistics(10, 15, 20),
                 0.5,
-                new Weapon("Fire Magic", 15, null),
+                wpns.FireMagic,
                 img.HumanInFlame
                 ),
             new Enemy(
@@ -107,7 +107,7 @@ namespace SazaracsMagicSword.Data
                 0.1,
                 new Statistics(40, 15, 10),
                 0.5,
-                new Weapon("Claws", 30, null),
+                wpns.StrongClaws,
                 img.WareWolf
                 ),
             new Enemy(
@@ -115,7 +115,7 @@ namespace SazaracsMagicSword.Data
                 0.1,
                 new Statistics(30, 30, 30),
                 0.5,
-                new Weapon("Sazarak's Sword", 70, null),
+                wpns.SazaracMagicSword,
                 img.HumanWithShieldAndBigSword
                 )
         };

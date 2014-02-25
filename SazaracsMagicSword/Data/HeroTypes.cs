@@ -50,7 +50,7 @@ namespace SazaracsMagicSword.Data
         }
         public Hero Cheater()
         {
-            Weapon weap = new Weapon("Tester's Sword", 100, new Magic("Tester's Magic", 50, 50, 0.6));
+            Weapon weap = weaps.TestersSword;
             return new Hero("Cheater",
                 new Statistics(50, 50, 50),
                 weap,

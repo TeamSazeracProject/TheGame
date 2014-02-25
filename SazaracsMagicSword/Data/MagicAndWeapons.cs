@@ -24,7 +24,11 @@ namespace SazaracsMagicSword.Data
         {
             new Magic("Tornado", 40, 0, 0.2),
             new Magic("Bless", 0, -70, 0.5),
-            new Magic("Curse", 100, 30, 0.2)
+            new Magic("Curse", 100, 30, 0.2),
+            new Magic("DOOM", 70, 20),
+            new Magic("Steal Life", 30, -30, 0.3),
+            new Magic("Tester's Magic", 50, 50, 0.6)
+
         };
 
         //Property is kept for legacy issues
@@ -45,34 +49,50 @@ namespace SazaracsMagicSword.Data
         public Magic Tornado { get { return this.masterSpells[0]; } }
         public Magic Bless { get { return this.masterSpells[1]; } }
         public Magic Curse { get { return this.masterSpells[2]; } }
+        public Magic DOOM { get { return this.masterSpells[3]; } }
+        public Magic StealLife { get { return this.masterSpells[4]; } }
+        public Magic TestersMagic { get { return this.masterSpells[5]; } }
     }
+
     public class Weapons
     {
         private List<Weapon> weakWeapons = new List<Weapon>()
         {
             new Weapon("Knive", 5, null),
             new Weapon("Short Sword", 8, null),
-            new Weapon("Hammer", 12, null)
+            new Weapon("Hammer", 12, null),
+            new Weapon("Weak Claws", 5, null),
+            new Weapon("Gnome Sword", 7, null)
         };
 
         private List<Weapon> averageWeapons = new List<Weapon>()
         {
             new Weapon("Bow", 10, null),
             new Weapon("Sword", 13, null),
-            new Weapon("Spear", 18, null)
+            new Weapon("Spear", 18, null),
+            new Weapon("Claws", 15, null),
+            new Weapon("Venom", 15, null)
         };
 
         private List<Weapon> goodWeapons = new List<Weapon>()
         {
             new Weapon("Revolver", 25, null),
             new Weapon("Holly Sword", 33, null),
-            new Weapon("Heavy Hammer", 40, null)
+            new Weapon("Heavy Hammer", 40, null),
+            new Weapon("Hidden Dagers", 30, null),
+            new Weapon("Chaotic Magic", 35, null),
+            new Weapon("Demonic Magic", 40, null),
+
+
         };
 
         private List<Weapon> uniques = new List<Weapon>()
         {
-            new Weapon("Fork of DOOM", 1, new Magic("DOOM", 70, 20)), // a joke
-            new Weapon("Sazarac's Magic Sword", 55, new Magic("Steal Life", 30, -30, 0.3)) // the weapon of the final boss - Sazarac
+            new Weapon("Fork of DOOM", 1, (new Spells()).DOOM),
+            new Weapon("Sazarac's Magic Sword", 70, (new Spells()).StealLife), // the weapon of the final boss - Sazarac
+            new Weapon("Fire Magic", 15, null),
+            new Weapon("Claws", 30, null),
+            new Weapon("Tester's Sword", 100, (new Spells()).TestersMagic)
         };
 
         //Property is kept for legacy issues
@@ -90,13 +110,23 @@ namespace SazaracsMagicSword.Data
         public Weapon Knive { get { return this.weakWeapons[0]; } }
         public Weapon ShortSword { get { return this.weakWeapons[1]; } }
         public Weapon Hammer { get { return this.weakWeapons[2]; } }
+        public Weapon WeakClaws { get { return this.weakWeapons[3]; } }
+        public Weapon GnomeSword { get { return this.weakWeapons[4]; } }
         public Weapon Bow { get { return this.averageWeapons[0]; } }
         public Weapon Sword { get { return this.averageWeapons[1]; } }
         public Weapon Spear { get { return this.averageWeapons[2]; } }
+        public Weapon AverageClaw { get { return this.averageWeapons[3]; } }
+        public Weapon Venom { get { return this.averageWeapons[4]; } }
         public Weapon Revolver { get { return this.goodWeapons[0]; } }
         public Weapon HollySword { get { return this.goodWeapons[1]; } }
         public Weapon HeavyHammer { get { return this.goodWeapons[2]; } }
+        public Weapon HiddenDagers { get { return this.goodWeapons[3]; } }
+        public Weapon ChaoticMagic { get { return this.goodWeapons[4]; } }
+        public Weapon DemonicMagic { get { return this.goodWeapons[5]; } }
         public Weapon ForkОfDOOM { get { return this.uniques[0]; } }
-        public Weapon MagicSword { get { return this.uniques[1]; } }
+        public Weapon SazaracMagicSword { get { return this.uniques[1]; } }
+        public Weapon FireMagic { get { return this.uniques[2]; } }
+        public Weapon StrongClaws { get { return this.uniques[3]; } }
+        public Weapon TestersSword { get { return this.uniques[4]; } }
     }
 }
