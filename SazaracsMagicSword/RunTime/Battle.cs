@@ -65,6 +65,7 @@ namespace SazaracsMagicSword.RunTime
                 if (BossFight)
                 {
                     TheHero.LevelUp();
+                    hero.position = new Position(0, 0);
 
                     if (TheHero.level > 3)
                     {
