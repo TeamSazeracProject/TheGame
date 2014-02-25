@@ -18,3 +18,8 @@ C:\Users\Simoo\Documents\GitHub\TheGame\TheGame\SazaracsMagicSword\obj\x86\Debug
 C:\Users\Simoo\Documents\GitHub\TheGame\TheGame\SazaracsMagicSword\bin\Debug\SazaracsMagicSword.exe
 C:\Users\Simoo\Documents\GitHub\TheGame\TheGame\SazaracsMagicSword\bin\Debug\SazaracsMagicSword.pdb
 C:\Users\Simoo\Documents\GitHub\TheGame\TheGame\SazaracsMagicSword\obj\x86\Debug\SazaracsMagicSword.csprojResolveAssemblyReference.cache
+C:\Users\Petr\Desktop\Programming\Telerig academy\OOP\TeamWork\TheGame\SazaracsMagicSword\bin\Debug\SazaracsMagicSword.exe
+C:\Users\Petr\Desktop\Programming\Telerig academy\OOP\TeamWork\TheGame\SazaracsMagicSword\bin\Debug\SazaracsMagicSword.pdb
+C:\Users\Petr\Desktop\Programming\Telerig academy\OOP\TeamWork\TheGame\SazaracsMagicSword\obj\x86\Debug\SazaracsMagicSword.csprojResolveAssemblyReference.cache
+C:\Users\Petr\Desktop\Programming\Telerig academy\OOP\TeamWork\TheGame\SazaracsMagicSword\obj\x86\Debug\SazaracsMagicSword.exe
+C:\Users\Petr\Desktop\Programming\Telerig academy\OOP\TeamWork\TheGame\SazaracsMagicSword\obj\x86\Debug\SazaracsMagicSword.pdb
