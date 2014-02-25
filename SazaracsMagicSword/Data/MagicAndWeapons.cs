@@ -1,55 +1,32 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using SazaracsMagicSword.GameObjects;
 
 namespace SazaracsMagicSword.Data
 {
-    #region Spells/Magic
     public class Spells
     {
-        private List<Magic> basicSpells = new List<Magic>()
+        public List<Magic> BasicSpells = new List<Magic>()
         {
-            new Magic("Flash", 1, 0, 0.9),
-            new Magic("FireBall", 10, 0,  0.1),
-            new Magic("Freaze", 5, 0, 0.5)
+            new Magic("Flash", 5, 0, 0.9),
+            new Magic("FireBall", 15, 0,  0.1),
+            new Magic("Freaze", 10, 0, 0.5)
         };
 
-        private List<Magic> advancedSpells = new List<Magic>()
+        public List<Magic> AdvancedSpells = new List<Magic>()
         {
-            new Magic("Heal", 0, -20, 0),
-            new Magic("Slow Time", 5, 0, 0.9),
-            new Magic("Rock Slide", 15, 0, 0.4)
+            new Magic("Heal", 0, -30, 0),
+            new Magic("Slow Time", 12, 0, 0.9),
+            new Magic("Rock Slide", 25, 0, 0.4)
         };
 
-        private List<Magic> masterSpells = new List<Magic>()
+        public List<Magic> MasterSpells = new List<Magic>()
         {
-            new Magic("Tornado", 35, 0, 0.2),
-            new Magic("Bless", 0, -50, 0.5),
-            new Magic("Curse", 50, 10, 0.2)
+            new Magic("Tornado", 40, 0, 0.2),
+            new Magic("Bless", 0, -70, 0.5),
+            new Magic("Curse", 100, 30, 0.2)
         };
-
-        //Property is kept for legacy issues
-        public List<Magic> BasicSpells { get { return this.basicSpells; } }
-
-        //Property is kept for legacy issues
-        public List<Magic> AdvancedSpells { get { return this.advancedSpells; } }
-
-        //Property is kept for legacy issues
-        public List<Magic> MasterSpells { get { return this.masterSpells; } }
-
-        public Magic Flash { get { return this.basicSpells[0]; } }
-        public Magic FireBall { get { return this.basicSpells[1]; } }
-        public Magic Freeze { get { return this.basicSpells[2]; } }
-        public Magic Heal { get { return this.advancedSpells[0]; } }
-        public Magic SlowTime { get { return this.advancedSpells[1]; } }
-        public Magic RockSlide { get { return this.advancedSpells[2]; } }
-        public Magic Tornado { get { return this.masterSpells[0]; } }
-        public Magic Bless { get { return this.masterSpells[1]; } }
-        public Magic Curse { get { return this.masterSpells[2]; } }
     }
-    #endregion
-
-    #region Weapons
     public class Weapons
     {
         private List<Weapon> weakWeapons = new List<Weapon>()
@@ -103,5 +80,4 @@ namespace SazaracsMagicSword.Data
         public Weapon ForkОfDOOM { get { return this.uniques[0]; } }
         public Weapon MagicSword { get { return this.uniques[1]; } }
     }
-    #endregion
 }
