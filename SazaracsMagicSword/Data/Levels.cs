@@ -8,8 +8,8 @@ namespace SazaracsMagicSword.Data
     [Serializable]
     class Levels
     {
-        public int width = 80;
-        public int height = 40;
+        private int width = 80;
+        private int height = 40;
         private string[] level1 = LoadData.LoadFile(@"../../Data/Levels/Level1.txt");
         private string[] level2 = LoadData.LoadFile(@"../../Data/Levels/Level2.txt");
         private string[] level3 = LoadData.LoadFile(@"../../Data/Levels/Level3.txt");
