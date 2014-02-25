@@ -32,7 +32,7 @@ namespace SazaracsMagicSword.Data
                 0.1,
                 new Statistics(10, 10, 10),
                 0.9,
-                wpns.WeakWeapons[1],
+                wpns.ShortSword,
                 img.HumanWithSword
                 )
         };
@@ -44,7 +44,7 @@ namespace SazaracsMagicSword.Data
                 0.1,
                 new Statistics(15, 15, 10),
                 0.7,
-                wpns.AverageWeapons[1],
+                wpns.Sword,
                 img.HumanWithTwoSabers
                 ),
             new Enemy(

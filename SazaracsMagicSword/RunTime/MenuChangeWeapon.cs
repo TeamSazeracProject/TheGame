@@ -39,8 +39,8 @@ namespace SazaracsMagicSword.RunTime
                     break;
             }
 
-            weapon = possibleWeapons[rnd.Next(3)];
-            weapon.magic = possibleMagic[rnd.Next(3)];
+            weapon = possibleWeapons[rnd.Next(possibleWeapons.Count)];
+            weapon.magic = possibleMagic[rnd.Next(possibleMagic.Count)];
             DrawMenuInConsole(hero, weapon);
             bool ChangeWeapon = GetChoice();
             if (ChangeWeapon)
