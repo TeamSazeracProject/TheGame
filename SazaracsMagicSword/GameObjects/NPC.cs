@@ -10,6 +10,7 @@ namespace SazaracsMagicSword.GameObjects
         //public List<string> conversation;
         public Position position;
         public string conversationPath;
+
         public NPC(string Name, string conversationPath, string[] image)
         {
             if (string.IsNullOrEmpty(Name))
