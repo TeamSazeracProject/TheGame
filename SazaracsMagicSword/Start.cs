@@ -14,7 +14,7 @@ namespace SazaracsMagicSword
         static Drawer draw = new Drawer();
         static Levels levels = new Levels();
         static Hero hero;
-        static VisualElement[,] matrix = new VisualElement[levels.height, levels.width];
+        static VisualElement[,] matrix = new VisualElement[levels.Height, levels.Width];
         static List<NPC> NPCsOfCurrentLevel = new List<NPC>();
         static bool nearbyNPC;
         static string[] currentLevel = levels.Level1;

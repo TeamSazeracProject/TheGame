@@ -40,7 +40,6 @@ namespace SazaracsMagicSword.Data
         public string[] WareWolf { get { return this.wareWolf; } }
         public string[] Spider { get { return this.spider; } }
         public string[] IntroText { get { return this.introText; } }
-        #endregion
-        
+        #endregion    
     }
 }
