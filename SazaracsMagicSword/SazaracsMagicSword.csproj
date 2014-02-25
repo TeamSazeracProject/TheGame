@@ -49,6 +49,7 @@
     <Compile Include="Data\HeroTypes.cs" />
     <Compile Include="Data\Images.cs" />
     <Compile Include="Data\Levels.cs" />
+    <Compile Include="Data\LoadData.cs" />
     <Compile Include="Data\MagicAndWeapons.cs" />
     <Compile Include="Data\NPCs.cs" />
     <Compile Include="Data\VisualElements.cs" />
