@@ -59,6 +59,11 @@ namespace SazaracsMagicSword.RunTime
             if (currentHeroHP < 1)
             {
                 // game over
+                TheHero.LevelUp();
+                hero.position = new Position(0, 0);
+                Loader load = new Loader();
+                NPCsOfCurrentLevel.Clear();
+                matrix = load.LoadLevel(matrix, TheHero, NPCsOfCurrentLevel);
             }
             else
             {
@@ -76,7 +81,6 @@ namespace SazaracsMagicSword.RunTime
                     newWeapon.GetRandomWeapon(TheHero);
 
                     Loader load = new Loader();
-                    Levels levels = new Levels();
                     NPCsOfCurrentLevel.Clear();
 
                     matrix = load.LoadLevel(matrix, TheHero, NPCsOfCurrentLevel);

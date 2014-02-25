@@ -18,11 +18,11 @@ namespace SazaracsMagicSword.GameObjects
             this.dexterity = dex;
             this.willpower = will;
 
-            this.hitPoints = this.strength * 5 + this.dexterity * 2 + this.willpower;
+            this.hitPoints = this.strength * 4 + this.dexterity * 3 + this.willpower * 2;
         }
         public int RefreshHP()
         {
-            return this.strength * 5 + this.dexterity * 2 + this.willpower;
+            return this.strength * 4 + this.dexterity * 3 + this.willpower * 2;
         }
     }
 }
