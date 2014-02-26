@@ -4,7 +4,7 @@ using SazaracsMagicSword.GameObjects;
 
 namespace SazaracsMagicSword.Data
 {
-    class Enemyes
+    public class Enemyes
     {
         #region Fields
         static Images img = new Images();

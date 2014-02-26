@@ -6,7 +6,7 @@ using SazaracsMagicSword.GameObjects;
 
 namespace SazaracsMagicSword.Data
 {
-    class NPCs
+    public class NPCs
     {
         static Images imgs = new Images();
 

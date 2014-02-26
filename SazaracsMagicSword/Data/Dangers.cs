@@ -6,7 +6,7 @@ using SazaracsMagicSword.GameObjects;
 
 namespace SazaracsMagicSword.Data
 {
-    class Dangers
+    public class Dangers
     {
         static Enemyes enms = new Enemyes();
 

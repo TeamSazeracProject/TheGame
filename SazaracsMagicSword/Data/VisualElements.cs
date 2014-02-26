@@ -4,7 +4,7 @@ using SazaracsMagicSword.GameObjects;
 
 namespace SazaracsMagicSword.Data
 {
-    class VisualElements
+    public class VisualElements
     {
         static Random rnd = new Random();
 

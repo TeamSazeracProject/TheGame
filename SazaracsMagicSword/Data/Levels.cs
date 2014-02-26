@@ -6,7 +6,7 @@ using System.Text;
 namespace SazaracsMagicSword.Data
 {
     [Serializable]
-    class Levels
+    public class Levels
     {
         private int width = 80;
         private int height = 40;

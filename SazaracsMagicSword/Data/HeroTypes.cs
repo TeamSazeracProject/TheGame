@@ -6,7 +6,7 @@ using SazaracsMagicSword.GameObjects;
 
 namespace SazaracsMagicSword.Data
 {
-    class HeroTypes
+    public class HeroTypes
     {
         Weapons weaps = new Weapons();
         Spells spls = new Spells();
