@@ -14,22 +14,27 @@ namespace SazaracsMagicSword.GameObjects
         public Weapon weapon;
         public Position position;
 
-        public Hero(string Name, Statistics statistics, Weapon weapon, string[] image, Statistics levelUpStats)
+        public Hero(string name, Statistics statistics, Weapon weapon, string[] image, Statistics levelUpStats)
+            : base(name, image)
         {
-            if (string.IsNullOrEmpty(Name))
+            if (string.IsNullOrEmpty(name))
             {
                 throw new ArgumentNullException("Name is empty.");
             }
-            this.Name = Name;
+            
             this.statistics = statistics;
             this.weapon = weapon;
             this.levelUpStats = levelUpStats;
-            this.image = image;
-        }
-        public Hero()
-        {
 
         }
+
+        //TODO: To be removed
+        //public Hero()
+        //    : base()
+        //{
+        //    //TODO: set default values for properties
+        //}
+
         public void LevelUp()
         {
             this.level++;

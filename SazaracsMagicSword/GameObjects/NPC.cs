@@ -5,25 +5,39 @@ using System.Text;
 
 namespace SazaracsMagicSword.GameObjects
 {
-    class NPC : Human
+    public class NPC : Human
     {
         //public List<string> conversation;
-        public Position position;
-        public string conversationPath;
+        private Position position;
+        private string conversationPath;
 
-        public NPC(string Name, string conversationPath, string[] image)
+        #region Properties
+        public Position Position 
         {
-            if (string.IsNullOrEmpty(Name))
+            get { return this.position; }
+            set { this.position = value; }
+        }
+
+        public string ConversationPath
+        {
+            get { return this.conversationPath; }
+            
+            set 
             {
-                throw new ArgumentException("Name is empty");
+                if (value == null)
+                {
+                    throw new ArgumentException("Conversation is empty!");
+                }
+ 
+                this.conversationPath = value;
             }
-            if (conversationPath == null)
-            {
-                throw new ArgumentException("Conversation is empty");
-            }
-            this.Name = Name;
-            this.conversationPath = conversationPath;
-            this.image = image;
+        }
+        #endregion
+
+        public NPC(string name, string conversationPath, string[] image)
+            : base(name, image)
+        {   
+            this.ConversationPath = conversationPath;
         }
     }
 }

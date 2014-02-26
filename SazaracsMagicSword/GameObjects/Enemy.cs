@@ -7,12 +7,39 @@ namespace SazaracsMagicSword.GameObjects
 {
     public class Enemy : Human
     {
-        public double chanceToAppear;
-        public Statistics statistics;
-        public double chanceToEscape;
-        public Weapon weapon;
+        private double chanceToAppear;
+        private Statistics statistics;
+        private double chanceToEscape;
+        private Weapon weapon;
 
-        public Enemy(string Name, double chanceToAppear, Statistics statistics, double chanceToEscape, Weapon weapon, string[] image)
+        #region Properties
+        public double ChanceToAppear 
+        {
+            get { return this.chanceToAppear; }
+            set { this.chanceToAppear = value; }
+        }
+        public Statistics Statistics
+        { 
+            get { return this.statistics; }
+            set { this.statistics = value; } 
+        }
+
+        public double ChanceToEscape
+        {
+            get { return this.chanceToEscape; }
+            set { this.chanceToEscape = value; }
+        }
+
+        public Weapon Weapon
+        {
+            get { return this.weapon; }
+            set { this.weapon = value; }
+        }
+        #endregion
+
+
+        public Enemy(string name, double chanceToAppear, Statistics statistics, double chanceToEscape, Weapon weapon, string[] image)
+            : base(name, image)
         {
             if (string.IsNullOrEmpty(Name))
             {
@@ -26,12 +53,13 @@ namespace SazaracsMagicSword.GameObjects
             {
                 throw new ArgumentException("chanceToEscape must be in the diapason of [0, 1].");
             }
-            this.Name = Name;
+
             this.chanceToAppear = chanceToAppear;
             this.statistics = statistics;
             this.chanceToEscape = chanceToEscape;
             this.weapon = weapon;
-            this.image = image;
+            //this.Name = name;
+            //this.Image = image;
         }
     }
 }

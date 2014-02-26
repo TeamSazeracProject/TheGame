@@ -72,7 +72,8 @@ namespace SazaracsMagicSword
         public static Hero SelectedChoice(int choice)
         {
             MenuChooseHero newGame = new MenuChooseHero();
-            Hero currentHero = new Hero();
+            Hero currentHero = null;
+
             switch (choice)
             {
                 case 1: currentHero =  newGame.ChooseHeroFromConsole(); break;
@@ -82,7 +83,12 @@ namespace SazaracsMagicSword
                 default: break;
             }
 
-            return currentHero;
+            return currentHero ?? new Hero(
+                "[Unknown Hero]",
+                new Statistics(0, 0, 0),
+                new Weapons().Sword,
+                new Images().Gnome,
+                new Statistics(10, 5, 0));
         }
     }
 }

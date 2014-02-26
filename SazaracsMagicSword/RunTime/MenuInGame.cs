@@ -108,7 +108,7 @@ namespace SazaracsMagicSword.RunTime
             Console.Clear();
 
             draw.DrawString("Name : " + hero.Name, ConsoleColor.Black, 4, 8);
-            draw.DrawImage(hero.image, ConsoleColor.Black, 5, 4);
+            draw.DrawImage(hero.Image, ConsoleColor.Black, 5, 4);
 
             draw.DrawString("Strength: " + hero.statistics.strength, ConsoleColor.Black, 23, 45);
             draw.DrawString("Dexterity: " + hero.statistics.dexterity, ConsoleColor.Black, 25, 45);

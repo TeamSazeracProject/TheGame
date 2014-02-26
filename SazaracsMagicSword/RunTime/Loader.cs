@@ -97,7 +97,7 @@ namespace SazaracsMagicSword.RunTime
                     {
                         matrix[r, c] = VisualLoader.NPC(sizeOfVisualElements); /// will be NPC
                         NPC npc = npcs.npcList[int.Parse((level[r][c]).ToString())];
-                        npc.position = new Position(r, c);
+                        npc.Position = new Position(r, c);
                         emptyNPCList.Add(npc);
                     }
                     else if (level[r][c].Equals('\''))

@@ -104,8 +104,8 @@ namespace SazaracsMagicSword
                 {
                     foreach (NPC npc in NPCsOfCurrentLevel)
                     {
-                        if (Math.Abs(npc.position.row - hero.position.row) <= 1 &&
-                            Math.Abs(npc.position.col - hero.position.col) <= 1)
+                        if (Math.Abs(npc.Position.row - hero.position.row) <= 1 &&
+                            Math.Abs(npc.Position.col - hero.position.col) <= 1)
                         {
                             Conversation conversation = new Conversation();
                             conversation.DrawConversation(hero, npc);
@@ -142,8 +142,8 @@ namespace SazaracsMagicSword
 
             foreach (NPC npc in NPCsOfCurrentLevel)
             {
-                if (Math.Abs(npc.position.row - hero.position.row) <= 1 &&
-                            Math.Abs(npc.position.col - hero.position.col) <= 1)
+                if (Math.Abs(npc.Position.row - hero.position.row) <= 1 &&
+                            Math.Abs(npc.Position.col - hero.position.col) <= 1)
                 {
                     nearbyNPC = true;
                     int top = height - 7;

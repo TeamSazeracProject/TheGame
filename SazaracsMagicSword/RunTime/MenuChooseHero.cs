@@ -100,7 +100,7 @@ namespace SazaracsMagicSword.RunTime
 
             draw.DrawString(choicePointer, ConsoleColor.DarkMagenta, (6 + choice * 2), 4);
 
-            draw.DrawImage(hero.image,ConsoleColor.Black,15,4);
+            draw.DrawImage(hero.Image,ConsoleColor.Black,15,4);
 
             draw.DrawString("Strength: " + hero.statistics.strength, ConsoleColor.Black, 33, 55);
             draw.DrawString("Dexterity: " + hero.statistics.dexterity, ConsoleColor.Black, 35, 55);

@@ -3,7 +3,7 @@
   <Class Name="SazaracsMagicSword.GameObjects.Enemy">
     <Position X="0.5" Y="1.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAABAAACAAEAAAAAAAAAAAAABA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAEAAAABAQACAAEAAgAAAAAEAAAABA=</HashCode>
       <FileName>GameObjects\Enemy.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -18,12 +18,12 @@
   <Class Name="SazaracsMagicSword.GameObjects.Human" Collapsed="true">
     <Position X="2.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAEAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAEAAEABAAAAAAAAAAAAA=</HashCode>
       <FileName>GameObjects\Human.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="SazaracsMagicSword.GameObjects.Magic">
-    <Position X="2.5" Y="4.5" Width="1.5" />
+    <Position X="2.75" Y="5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAkAAAAAACAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>GameObjects\Magic.cs</FileName>
@@ -32,7 +32,7 @@
   <Class Name="SazaracsMagicSword.GameObjects.NPC">
     <Position X="2.75" Y="1.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAIABAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAgAAAAIABAAAAAAAAAAAAAAABAAAA=</HashCode>
       <FileName>GameObjects\NPC.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -44,7 +44,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="SazaracsMagicSword.GameObjects.Weapon">
-    <Position X="0.5" Y="4.5" Width="1.5" />
+    <Position X="0.5" Y="5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAkAAAAAAAAAAAAAAEAAAAAAAAAAAAABA=</HashCode>
       <FileName>GameObjects\Weapon.cs</FileName>
@@ -58,7 +58,7 @@
     </TypeIdentifier>
   </Class>
   <Struct Name="SazaracsMagicSword.GameObjects.Statistics">
-    <Position X="4.75" Y="4.5" Width="1.5" />
+    <Position X="5" Y="5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAABAAAAAAAwAAAAAAAAAAAAAAAAAAAQAAABAAAAAA=</HashCode>
       <FileName>GameObjects\Statistics.cs</FileName>
@@ -79,7 +79,7 @@
     </TypeIdentifier>
   </Struct>
   <Interface Name="SazaracsMagicSword.GameObjects.IMove">
-    <Position X="7.25" Y="0.5" Width="1.5" />
+    <Position X="7.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>GameObjects\Position.cs</FileName>
