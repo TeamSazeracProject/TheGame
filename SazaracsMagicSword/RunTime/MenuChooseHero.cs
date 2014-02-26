@@ -102,17 +102,17 @@ namespace SazaracsMagicSword.RunTime
 
             draw.DrawImage(hero.Image,ConsoleColor.Black,15,4);
 
-            draw.DrawString("Strength: " + hero.statistics.strength, ConsoleColor.Black, 33, 55);
-            draw.DrawString("Dexterity: " + hero.statistics.dexterity, ConsoleColor.Black, 35, 55);
-            draw.DrawString("Willpower: " + hero.statistics.willpower, ConsoleColor.Black, 37, 55);
+            draw.DrawString("Strength: " + hero.Statistics.Strength, ConsoleColor.Black, 33, 55);
+            draw.DrawString("Dexterity: " + hero.Statistics.Dexterity, ConsoleColor.Black, 35, 55);
+            draw.DrawString("Willpower: " + hero.Statistics.EillPower, ConsoleColor.Black, 37, 55);
 
-            draw.DrawString("Weapon: " + hero.weapon.name, ConsoleColor.Black, 20, 55);
-            draw.DrawString("Weapon Damage: " + hero.weapon.damage, ConsoleColor.Black, 21, 55);
+            draw.DrawString("Weapon: " + hero.Weapon.name, ConsoleColor.Black, 20, 55);
+            draw.DrawString("Weapon Damage: " + hero.Weapon.damage, ConsoleColor.Black, 21, 55);
 
-            draw.DrawString("Magic: " + hero.weapon.magic.Name, ConsoleColor.Black, 23, 55);
-            draw.DrawString("Magic Damage: " + hero.weapon.magic.damage, ConsoleColor.Black, 24, 55);
-            draw.DrawString("Magic Damage on Self: " + hero.weapon.magic.damageOnSelf, ConsoleColor.Black, 25, 55);
-            draw.DrawString("Magic Chance to Stun: " + hero.weapon.magic.chanceToStun, ConsoleColor.Black, 26, 55);
+            draw.DrawString("Magic: " + hero.Weapon.magic.Name, ConsoleColor.Black, 23, 55);
+            draw.DrawString("Magic Damage: " + hero.Weapon.magic.damage, ConsoleColor.Black, 24, 55);
+            draw.DrawString("Magic Damage on Self: " + hero.Weapon.magic.damageOnSelf, ConsoleColor.Black, 25, 55);
+            draw.DrawString("Magic Chance to Stun: " + hero.Weapon.magic.chanceToStun, ConsoleColor.Black, 26, 55);
 
             Console.SetCursorPosition(0, 0);
         }

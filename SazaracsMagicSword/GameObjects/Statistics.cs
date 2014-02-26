@@ -4,25 +4,52 @@ using System.Linq;
 using System.Text;
 
 namespace SazaracsMagicSword.GameObjects
-{  [Serializable]
+{  
+    [Serializable]
     public struct Statistics
     {
-        public int strength;
-        public int dexterity;
-        public int willpower;
-        public int hitPoints;
+        private int strength;
+        private int dexterity;
+        private int eillPower;
+        private int hitPoints;
 
-        public Statistics(int str, int dex, int will)
+        #region Properties
+        public int Strength 
         {
-            this.strength = str;
-            this.dexterity = dex;
-            this.willpower = will;
-
-            this.hitPoints = this.strength * 4 + this.dexterity * 3 + this.willpower * 2;
+            get { return this.strength; }
+            set { this.strength = value; }
         }
+
+        public int Dexterity 
+        {
+            get { return this.dexterity; }
+            set { this.dexterity = value; }
+        }
+
+        public int EillPower 
+        {
+            get { return this.eillPower; }
+            set { this.eillPower = value; }
+        }
+
+        public int HitPoints 
+        {
+            get { return this.hitPoints; }
+            set { this.hitPoints = value; }
+        }
+        #endregion
+
+        public Statistics(int str, int dex, int will) : this()
+        {
+            this.Strength = str;
+            this.Dexterity = dex;
+            this.EillPower = will;
+            this.HitPoints = this.Strength * 4 + this.Dexterity * 3 + this.EillPower * 2;
+        }
+
         public int RefreshHP()
         {
-            return this.strength * 4 + this.dexterity * 3 + this.willpower * 2;
+            return this.Strength * 4 + this.Dexterity * 3 + this.EillPower * 2;
         }
     }
 }

@@ -30,9 +30,9 @@ namespace SazaracsMagicSword.RunTime
             hero = TheHero;
             enemy = TheEnemy;
 
-            totalHeroHP = hero.statistics.hitPoints;
+            totalHeroHP = hero.Statistics.HitPoints;
             currentHeroHP = totalHeroHP;
-            totalEnemyHP = enemy.Statistics.hitPoints;
+            totalEnemyHP = enemy.Statistics.HitPoints;
             currentEnemyHP = totalEnemyHP;
             DrawBattle(hero, enemy);
 
@@ -60,7 +60,7 @@ namespace SazaracsMagicSword.RunTime
             {
                 // game over
                 TheHero.LevelUp();
-                hero.position = new Position(0, 0);
+                hero.Position = new Position(0, 0);
                 Loader load = new Loader();
                 NPCsOfCurrentLevel.Clear();
                 matrix = load.LoadLevel(matrix, TheHero, NPCsOfCurrentLevel);
@@ -70,7 +70,7 @@ namespace SazaracsMagicSword.RunTime
                 if (BossFight)
                 {
                     TheHero.LevelUp();
-                    hero.position = new Position(0, 0);
+                    hero.Position = new Position(0, 0);
 
                     if (TheHero.level > 3)
                     {
@@ -155,14 +155,14 @@ namespace SazaracsMagicSword.RunTime
 
             if (pressedKey.Key.Equals(ConsoleKey.A))
             {
-                int damage = hero.weapon.damage;
-                damage = damage * hero.statistics.strength / 15;
-                damage = (int)((double)damage / enemy.Statistics.dexterity * 15);
+                int damage = hero.Weapon.damage;
+                damage = damage * hero.Statistics.Strength / 15;
+                damage = (int)((double)damage / enemy.Statistics.Dexterity * 15);
                 damage += damage * (hero.level - 1) / 3;
 
                 currentEnemyHP -= damage;
 
-                AddMessage(hero.Name + " used " + hero.weapon.name + " (" + damage + ")");
+                AddMessage(hero.Name + " used " + hero.Weapon.name + " (" + damage + ")");
                 DrawBattle(hero, enemy);
                 DrawDamage(true);
             }
@@ -170,12 +170,12 @@ namespace SazaracsMagicSword.RunTime
             {
                 DiceRoller dice = new DiceRoller();
 
-                int damage = hero.weapon.magic.damage;
-                damage = damage * hero.statistics.willpower / 15;
-                int damageOnSelf = hero.weapon.magic.damageOnSelf;
-                damageOnSelf = damageOnSelf * hero.statistics.willpower / 15;
+                int damage = hero.Weapon.magic.damage;
+                damage = damage * hero.Statistics.EillPower / 15;
+                int damageOnSelf = hero.Weapon.magic.damageOnSelf;
+                damageOnSelf = damageOnSelf * hero.Statistics.EillPower / 15;
 
-                damage = (int)((double)damage / enemy.Statistics.dexterity * 15);
+                damage = (int)((double)damage / enemy.Statistics.Dexterity * 15);
 
                 damage += damage * (hero.level - 1) / 3;
                 damageOnSelf += damageOnSelf * (hero.level - 1) / 3;
@@ -187,9 +187,9 @@ namespace SazaracsMagicSword.RunTime
                 {
                     currentHeroHP = totalHeroHP;
                 }
-                enemyIsCrippled = dice.NewDice(hero.weapon.magic.chanceToStun);
+                enemyIsCrippled = dice.NewDice(hero.Weapon.magic.chanceToStun);
 
-                AddMessage(hero.Name + " used " + hero.weapon.magic.Name + " (" + damage + " / " + damageOnSelf + ")");
+                AddMessage(hero.Name + " used " + hero.Weapon.magic.Name + " (" + damage + " / " + damageOnSelf + ")");
                 DrawBattle(hero, enemy);
                 DrawDamage(true);
             }
@@ -216,8 +216,8 @@ namespace SazaracsMagicSword.RunTime
             if (!enemyIsCrippled)
             {
                 int damage = enemy.Weapon.damage;
-                damage = damage * (enemy.Statistics.strength + enemy.Statistics.dexterity + enemy.Statistics.willpower) / 35;
-                damage = (int)((double)damage / hero.statistics.dexterity * 15);
+                damage = damage * (enemy.Statistics.Strength + enemy.Statistics.Dexterity + enemy.Statistics.EillPower) / 35;
+                damage = (int)((double)damage / hero.Statistics.Dexterity * 15);
 
                 currentHeroHP -= damage;
                 AddMessage(enemy.Name + " used " + enemy.Weapon.name + " (" + damage + ")");

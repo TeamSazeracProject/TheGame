@@ -10,7 +10,7 @@
   <Class Name="SazaracsMagicSword.GameObjects.Hero">
     <Position X="5" Y="1.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAIAAAAAAAAAAJAABGAEAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAIAAAAAkAAAQJAABGAEAAAgAAAAAAAAAAAA=</HashCode>
       <FileName>GameObjects\Hero.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -23,7 +23,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="SazaracsMagicSword.GameObjects.Magic">
-    <Position X="2.75" Y="5" Width="1.5" />
+    <Position X="2.75" Y="5.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAkAAAAAACAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>GameObjects\Magic.cs</FileName>
@@ -44,7 +44,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="SazaracsMagicSword.GameObjects.Weapon">
-    <Position X="0.5" Y="5" Width="1.5" />
+    <Position X="0.5" Y="5.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAkAAAAAAAAAAAAAAEAAAAAAAAAAAAABA=</HashCode>
       <FileName>GameObjects\Weapon.cs</FileName>
@@ -58,9 +58,9 @@
     </TypeIdentifier>
   </Class>
   <Struct Name="SazaracsMagicSword.GameObjects.Statistics">
-    <Position X="5" Y="5" Width="1.5" />
+    <Position X="5" Y="5.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAABAAAAAAAwAAAAAAAAAAAAAAAAAAAQAAABAAAAAA=</HashCode>
+      <HashCode>AAAAAACAAAAAwAAAAAAABAAAAAFAAAABQAAABAAAAAA=</HashCode>
       <FileName>GameObjects\Statistics.cs</FileName>
     </TypeIdentifier>
   </Struct>

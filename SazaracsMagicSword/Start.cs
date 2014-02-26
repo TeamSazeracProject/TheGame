@@ -64,36 +64,36 @@ namespace SazaracsMagicSword
 
             if (pressedKey.Key.Equals(ConsoleKey.UpArrow))
             {
-                if (!matrix[hero.position.row - 1, hero.position.col].isSolid)
+                if (!matrix[hero.Position.row - 1, hero.Position.col].isSolid)
                 {
-                    draw.DrawInConsole(matrix[hero.position.row, hero.position.col], hero.position.row, hero.position.col);
+                    draw.DrawInConsole(matrix[hero.Position.row, hero.Position.col], hero.Position.row, hero.Position.col);
                     hero.Move(Direction.up);
                     CheckHeroPosition();
                 }
             }
             else if (pressedKey.Key.Equals(ConsoleKey.DownArrow))
             {
-                if (!matrix[hero.position.row + 1, hero.position.col].isSolid)
+                if (!matrix[hero.Position.row + 1, hero.Position.col].isSolid)
                 {
-                    draw.DrawInConsole(matrix[hero.position.row, hero.position.col], hero.position.row, hero.position.col);
+                    draw.DrawInConsole(matrix[hero.Position.row, hero.Position.col], hero.Position.row, hero.Position.col);
                     hero.Move(Direction.down);
                     CheckHeroPosition();
                 }
             }
             else if (pressedKey.Key.Equals(ConsoleKey.LeftArrow))
             {
-                if (!matrix[hero.position.row, hero.position.col - 1].isSolid)
+                if (!matrix[hero.Position.row, hero.Position.col - 1].isSolid)
                 {
-                    draw.DrawInConsole(matrix[hero.position.row, hero.position.col], hero.position.row, hero.position.col);
+                    draw.DrawInConsole(matrix[hero.Position.row, hero.Position.col], hero.Position.row, hero.Position.col);
                     hero.Move(Direction.left);
                     CheckHeroPosition();
                 }
             }
             else if (pressedKey.Key.Equals(ConsoleKey.RightArrow))
             {
-                if (!matrix[hero.position.row, hero.position.col + 1].isSolid)
+                if (!matrix[hero.Position.row, hero.Position.col + 1].isSolid)
                 {
-                    draw.DrawInConsole(matrix[hero.position.row, hero.position.col], hero.position.row, hero.position.col);
+                    draw.DrawInConsole(matrix[hero.Position.row, hero.Position.col], hero.Position.row, hero.Position.col);
                     hero.Move(Direction.right);
                     CheckHeroPosition();
                 }
@@ -104,8 +104,8 @@ namespace SazaracsMagicSword
                 {
                     foreach (NPC npc in NPCsOfCurrentLevel)
                     {
-                        if (Math.Abs(npc.Position.row - hero.position.row) <= 1 &&
-                            Math.Abs(npc.Position.col - hero.position.col) <= 1)
+                        if (Math.Abs(npc.Position.row - hero.Position.row) <= 1 &&
+                            Math.Abs(npc.Position.col - hero.Position.col) <= 1)
                         {
                             Conversation conversation = new Conversation();
                             conversation.DrawConversation(hero, npc);
@@ -136,14 +136,14 @@ namespace SazaracsMagicSword
         static void CheckHeroPosition()
         {
             DiceRoller dice = new DiceRoller();
-            int r = hero.position.row;
-            int c = hero.position.col;
+            int r = hero.Position.row;
+            int c = hero.Position.col;
             nearbyNPC = false;
 
             foreach (NPC npc in NPCsOfCurrentLevel)
             {
-                if (Math.Abs(npc.Position.row - hero.position.row) <= 1 &&
-                            Math.Abs(npc.Position.col - hero.position.col) <= 1)
+                if (Math.Abs(npc.Position.row - hero.Position.row) <= 1 &&
+                            Math.Abs(npc.Position.col - hero.Position.col) <= 1)
                 {
                     nearbyNPC = true;
                     int top = height - 7;

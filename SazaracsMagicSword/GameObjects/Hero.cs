@@ -14,35 +14,55 @@ namespace SazaracsMagicSword.GameObjects
         public Weapon weapon;
         public Position position;
 
+        #region Properties
+        public Statistics Statistics
+        { 
+            get { return this.statistics; }
+            set { this.statistics = value; }
+        }
+
+        public Statistics LevelUpStats 
+        {
+            get { return this.levelUpStats; }
+            set { this.levelUpStats = value; }
+        }
+
+        public Weapon Weapon 
+        {
+            get { return this.weapon; }
+            set { this.weapon = value; }
+        }
+
+        public Position Position 
+        {
+            get { return this.position; }
+            set { this.position = value; }
+        }
+
+        #endregion
+
+        #region Constructors
         public Hero(string name, Statistics statistics, Weapon weapon, string[] image, Statistics levelUpStats)
             : base(name, image)
         {
-            if (string.IsNullOrEmpty(name))
-            {
-                throw new ArgumentNullException("Name is empty.");
-            }
             
-            this.statistics = statistics;
-            this.weapon = weapon;
-            this.levelUpStats = levelUpStats;
-
+            this.Statistics = statistics;
+            this.Weapon = weapon;
+            this.LevelUpStats = levelUpStats;
         }
+        #endregion
 
-        //TODO: To be removed
-        //public Hero()
-        //    : base()
-        //{
-        //    //TODO: set default values for properties
-        //}
+        #region Methods
 
         public void LevelUp()
         {
             this.level++;
-            this.statistics.strength += this.levelUpStats.strength;
-            this.statistics.dexterity += this.levelUpStats.dexterity;
-            this.statistics.willpower += this.levelUpStats.willpower;
-            this.statistics.hitPoints = this.statistics.RefreshHP();
+            this.statistics.Strength += this.LevelUpStats.Strength;
+            this.statistics.Dexterity += this.LevelUpStats.Dexterity;
+            this.statistics.EillPower += this.LevelUpStats.EillPower;
+            this.statistics.HitPoints = this.Statistics.RefreshHP();
         }
+
         public void Move(Direction direction)
         {
             switch (direction)
@@ -63,5 +83,6 @@ namespace SazaracsMagicSword.GameObjects
                     break;
             }
         }
+        #endregion
     }
 }

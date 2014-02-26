@@ -58,8 +58,6 @@ namespace SazaracsMagicSword.GameObjects
             this.statistics = statistics;
             this.chanceToEscape = chanceToEscape;
             this.weapon = weapon;
-            //this.Name = name;
-            //this.Image = image;
         }
     }
 }

@@ -47,9 +47,7 @@ namespace SazaracsMagicSword
                 pressedKey = Console.ReadKey();
             }
 
-         return choice;
-
-          
+         return choice;          
         }
 
         private static void DrawChoosen(int choice)

@@ -45,7 +45,7 @@ namespace SazaracsMagicSword.RunTime
             bool ChangeWeapon = GetChoice();
             if (ChangeWeapon)
             {
-                hero.weapon = weapon;
+                hero.Weapon = weapon;
             }
         }
         private void DrawMenuInConsole(Hero hero, Weapon weapon)
@@ -100,42 +100,42 @@ namespace SazaracsMagicSword.RunTime
                 line++;
             }
 
-            message = "Your current weapon is " + hero.weapon.name + " and it's damage is " + hero.weapon.damage;
+            message = "Your current weapon is " + hero.Weapon.name + " and it's damage is " + hero.Weapon.damage;
             draw.DrawString(message, ConsoleColor.Black,
                 17, Console.WindowWidth / 2 - message.Length / 2);
 
-            message = "The weapon's magic is " + hero.weapon.magic.Name + " and it's effects are: ";
+            message = "The weapon's magic is " + hero.Weapon.magic.Name + " and it's effects are: ";
             draw.DrawString(message, ConsoleColor.Black,
                 18, Console.WindowWidth / 2 - message.Length / 2);
 
             line = 20;
-            if (hero.weapon.magic.damage > 0)
+            if (hero.Weapon.magic.damage > 0)
             {
-                message = "Damage: " + hero.weapon.magic.damage;
+                message = "Damage: " + hero.Weapon.magic.damage;
                 draw.DrawString(message, ConsoleColor.Black,
                     line, Console.WindowWidth / 2 - message.Length / 2);
                 line++;
             }
-            if (hero.weapon.magic.damageOnSelf != 0)
+            if (hero.Weapon.magic.damageOnSelf != 0)
             {
-                if (hero.weapon.magic.damageOnSelf > 0)
+                if (hero.Weapon.magic.damageOnSelf > 0)
                 {
-                    message = "Damage on self: " + hero.weapon.magic.damageOnSelf;
+                    message = "Damage on self: " + hero.Weapon.magic.damageOnSelf;
                     draw.DrawString(message, ConsoleColor.Black,
                         line, Console.WindowWidth / 2 - message.Length / 2);
                     line++;
                 }
                 else
                 {
-                    message = "Heal: " + (0 - hero.weapon.magic.damageOnSelf);
+                    message = "Heal: " + (0 - hero.Weapon.magic.damageOnSelf);
                     draw.DrawString(message, ConsoleColor.Black,
                         line, Console.WindowWidth / 2 - message.Length / 2);
                     line++;
                 }
             }
-            if (hero.weapon.magic.chanceToStun > 0)
+            if (hero.Weapon.magic.chanceToStun > 0)
             {
-                message = "Chance to stun: " + (100 * hero.weapon.magic.chanceToStun) + "%";
+                message = "Chance to stun: " + (100 * hero.Weapon.magic.chanceToStun) + "%";
                 draw.DrawString(message, ConsoleColor.Black,
                     line, Console.WindowWidth / 2 - message.Length / 2);
                 line++;

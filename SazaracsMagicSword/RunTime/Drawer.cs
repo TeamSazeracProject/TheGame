@@ -88,7 +88,7 @@ namespace SazaracsMagicSword.RunTime
 
         public void DrawHero(Hero hero)
         {
-            Console.SetCursorPosition(hero.position.col, hero.position.row);
+            Console.SetCursorPosition(hero.Position.col, hero.Position.row);
             Console.BackgroundColor = ConsoleColor.DarkRed;
             Console.Write('H');
         }

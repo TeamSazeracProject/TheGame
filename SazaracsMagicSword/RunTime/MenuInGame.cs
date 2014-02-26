@@ -110,17 +110,17 @@ namespace SazaracsMagicSword.RunTime
             draw.DrawString("Name : " + hero.Name, ConsoleColor.Black, 4, 8);
             draw.DrawImage(hero.Image, ConsoleColor.Black, 5, 4);
 
-            draw.DrawString("Strength: " + hero.statistics.strength, ConsoleColor.Black, 23, 45);
-            draw.DrawString("Dexterity: " + hero.statistics.dexterity, ConsoleColor.Black, 25, 45);
-            draw.DrawString("Willpower: " + hero.statistics.willpower, ConsoleColor.Black, 27, 45);
+            draw.DrawString("Strength: " + hero.Statistics.Strength, ConsoleColor.Black, 23, 45);
+            draw.DrawString("Dexterity: " + hero.Statistics.Dexterity, ConsoleColor.Black, 25, 45);
+            draw.DrawString("Willpower: " + hero.Statistics.EillPower, ConsoleColor.Black, 27, 45);
 
-            draw.DrawString("Weapon: " + hero.weapon.name, ConsoleColor.Black, 10, 45);
-            draw.DrawString("Weapon Damage: " + hero.weapon.damage, ConsoleColor.Black, 11, 45);
+            draw.DrawString("Weapon: " + hero.Weapon.name, ConsoleColor.Black, 10, 45);
+            draw.DrawString("Weapon Damage: " + hero.Weapon.damage, ConsoleColor.Black, 11, 45);
 
-            draw.DrawString("Magic: " + hero.weapon.magic.Name, ConsoleColor.Black, 13, 45);
-            draw.DrawString("Magic Damage: " + hero.weapon.magic.damage, ConsoleColor.Black, 14, 45);
-            draw.DrawString("Magic Damage on Self: " + hero.weapon.magic.damageOnSelf, ConsoleColor.Black, 15, 45);
-            draw.DrawString("Magic Chance to Stun: " + hero.weapon.magic.chanceToStun, ConsoleColor.Black, 16, 45);
+            draw.DrawString("Magic: " + hero.Weapon.magic.Name, ConsoleColor.Black, 13, 45);
+            draw.DrawString("Magic Damage: " + hero.Weapon.magic.damage, ConsoleColor.Black, 14, 45);
+            draw.DrawString("Magic Damage on Self: " + hero.Weapon.magic.damageOnSelf, ConsoleColor.Black, 15, 45);
+            draw.DrawString("Magic Chance to Stun: " + hero.Weapon.magic.chanceToStun, ConsoleColor.Black, 16, 45);
 
             Console.SetCursorPosition(0, 0);
 

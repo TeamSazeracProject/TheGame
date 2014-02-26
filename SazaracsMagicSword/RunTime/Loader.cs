@@ -21,8 +21,8 @@ namespace SazaracsMagicSword.RunTime
             {
                 for (int c2 = 0; c2 < VisibleMatrix.GetLength(0); c2++)
                 {
-                    int actualPositionRow = hero.position.row - VisibleMatrix.GetLength(0) / 2 + r2;
-                    int actualPositionCol = hero.position.col - VisibleMatrix.GetLength(0) / 2 + c2;
+                    int actualPositionRow = hero.Position.row - VisibleMatrix.GetLength(0) / 2 + r2;
+                    int actualPositionCol = hero.Position.col - VisibleMatrix.GetLength(0) / 2 + c2;
 
                     if (actualPositionRow >= 0 ||
                         actualPositionRow > matrix.GetLength(0) ||
@@ -110,9 +110,9 @@ namespace SazaracsMagicSword.RunTime
                         matrix[r, c] = VisualLoader.Grass(sizeOfVisualElements);
 
                        
-                            if (hero.position.row == 0 || hero.position.col == 0)
+                            if (hero.Position.row == 0 || hero.Position.col == 0)
                             {
-                                hero.position = new Position(r, c);
+                                hero.Position = new Position(r, c);
                             }
                             
                         
