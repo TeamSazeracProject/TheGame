@@ -28,3 +28,8 @@ D:\Documents\Telerik Academy\OOP\TeamWork 2014\TheGame\SazaracsMagicSword\bin\De
 D:\Documents\Telerik Academy\OOP\TeamWork 2014\TheGame\SazaracsMagicSword\obj\x86\Debug\SazaracsMagicSword.csprojResolveAssemblyReference.cache
 D:\Documents\Telerik Academy\OOP\TeamWork 2014\TheGame\SazaracsMagicSword\obj\x86\Debug\SazaracsMagicSword.exe
 D:\Documents\Telerik Academy\OOP\TeamWork 2014\TheGame\SazaracsMagicSword\obj\x86\Debug\SazaracsMagicSword.pdb
+C:\Users\ddimeski\Documents\GitHub\TheGame\SazaracsMagicSword\bin\Debug\SazaracsMagicSword.exe
+C:\Users\ddimeski\Documents\GitHub\TheGame\SazaracsMagicSword\bin\Debug\SazaracsMagicSword.pdb
+C:\Users\ddimeski\Documents\GitHub\TheGame\SazaracsMagicSword\obj\x86\Debug\SazaracsMagicSword.csprojResolveAssemblyReference.cache
+C:\Users\ddimeski\Documents\GitHub\TheGame\SazaracsMagicSword\obj\x86\Debug\SazaracsMagicSword.exe
+C:\Users\ddimeski\Documents\GitHub\TheGame\SazaracsMagicSword\obj\x86\Debug\SazaracsMagicSword.pdb
