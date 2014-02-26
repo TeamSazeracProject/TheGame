@@ -20,7 +20,7 @@ namespace SazaracsMagicSword.Data
         private string[] gnome = LoadData.LoadFile(@"../../Data/Images/Gnome.txt");
         private string[] bear = LoadData.LoadFile(@"../../Data/Images/Bear.txt");
         private string[] demon = LoadData.LoadFile(@"../../Data/Images/Demon.txt");
-        private string[] wareWolf = LoadData.LoadFile(@"../../Data/Images/WereWolf.txt");
+        private string[] wareWolf = LoadData.LoadFile(@"../../Data/Images/WareWolf.txt");
         private string[] spider = LoadData.LoadFile(@"../../Data/Images/Spider.txt");
         private string[] introText = LoadData.LoadFile(@"../../Data/Images/IntroText.txt");
         #endregion
