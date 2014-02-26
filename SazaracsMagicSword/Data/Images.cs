@@ -23,6 +23,7 @@ namespace SazaracsMagicSword.Data
         private string[] wareWolf = LoadData.LoadFile(@"../../Data/Images/WareWolf.txt");
         private string[] spider = LoadData.LoadFile(@"../../Data/Images/Spider.txt");
         private string[] introText = LoadData.LoadFile(@"../../Data/Images/IntroText.txt");
+        private string[] gameOver = LoadData.LoadFile(@"../../Data/Images/GameOver.txt");
         #endregion
 
         #region Properties
@@ -40,6 +41,7 @@ namespace SazaracsMagicSword.Data
         public string[] WareWolf { get { return this.wareWolf; } }
         public string[] Spider { get { return this.spider; } }
         public string[] IntroText { get { return this.introText; } }
+        public string[] GameOver { get { return this.introText; } }
         #endregion    
     }
 }
