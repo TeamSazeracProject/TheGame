@@ -93,6 +93,24 @@
     <Content Include="Data\Conversations\TheSmith.txt" />
     <Content Include="Data\Conversations\TheTroll.txt" />
     <Content Include="Data\Conversations\TheWitch.txt" />
+    <Content Include="Data\Images\Bear.txt" />
+    <Content Include="Data\Images\Damage.txt" />
+    <Content Include="Data\Images\Demon.txt" />
+    <Content Include="Data\Images\Dog.txt" />
+    <Content Include="Data\Images\GameOver.txt" />
+    <Content Include="Data\Images\Gnome.txt" />
+    <Content Include="Data\Images\HumanInFlame.txt" />
+    <Content Include="Data\Images\HumanOld.txt" />
+    <Content Include="Data\Images\HumanWithShieldAndBigSword.txt" />
+    <Content Include="Data\Images\HumanWithStaff.txt" />
+    <Content Include="Data\Images\HumanWithSword.txt" />
+    <Content Include="Data\Images\HumanWithTwoSabers.txt" />
+    <Content Include="Data\Images\IntroText.txt" />
+    <Content Include="Data\Images\Spider.txt" />
+    <Content Include="Data\Images\WareWolf.txt" />
+    <Content Include="Data\Levels\Level1.txt" />
+    <Content Include="Data\Levels\Level2.txt" />
+    <Content Include="Data\Levels\Level3.txt" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
